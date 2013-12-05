@@ -1,0 +1,12 @@
+grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
+
+generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
+
+ListeQuestions:
+	questions+=Question*;
+
+Question:
+	id=STRING ":" type=Type'!';
+
+Type:
+	('Radio'|'Text'|'TextArea'|'DropDown'|'CheckBox');
