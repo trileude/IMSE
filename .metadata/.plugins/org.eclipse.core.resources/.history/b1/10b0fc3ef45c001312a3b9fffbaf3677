@@ -1,0 +1,10 @@
+package transformation;
+
+@SuppressWarnings("all")
+public class transfoModelToText {
+  public void loadXMI(final String fileName) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nLayout cannot be resolved to a type."
+      + "\nUI cannot be resolved to a type.");
+  }
+}

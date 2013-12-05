@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 3 elements from project &apos;EXJ&apos;&#x0A;- Original project: &apos;EXJ&apos;&#x0A;- Original elements:&#x0A;     EXJ/src/mmui&#x0A;     EXJ/src/mmui.impl&#x0A;     EXJ/src/mmui.util&#x0A;- Delete subpackages" description="Delete elements" element1="/src&lt;mmui.util" element2="/src&lt;mmui.impl" element3="/src&lt;mmui" elements="3" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1385458495154" subPackages="true" version="1.0"/>
+</session>
