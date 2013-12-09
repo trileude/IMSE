@@ -50,55 +50,44 @@ class Transformation {
 		var ps = parsingPollSystem(pollSystemFile) as PollSystem
 		var map = parsingMapping(mappingFile) as ListeQuestions
 		
-		var itPs = ps.polls.iterator as Iterator<Poll>
 		//var itMap = map.questions.iterator as Iterator<Question>
 		
 		// Create model mmui
-		var ui = MmuiFactory.eINSTANCE.createLayout
-		
-		//firstPoll
-		if(itPs.hasNext())
+		val ui = MmuiFactory.eINSTANCE.createLayout
+		if(ps != null)
 		{
-			var itQuestionsPaul = itPs.next().questions.iterator as Iterator<fr.esir.imse.pollSystem.Question>
-			if(itQuestionsPaul.hasNext())
-			{
-				var pollQuestion = itQuestionsPaul.next()
-				var courant = MmuiFactory.eINSTANCE.createCheckBox as ElementUI
-				courant.id = pollQuestion.id
-				courant.question = pollQuestion.text
-				ui.listeElementUI.add(courant)
-				ui.firstElement = courant
-				while(itQuestionsPaul.hasNext())
+			ps.polls.forEach[poll |
+				var itQuestionsPoll = poll.questions.iterator as Iterator<fr.esir.imse.pollSystem.Question>
+				if(itQuestionsPoll.hasNext())
 				{
-					pollQuestion = itQuestionsPaul.next()
-					courant.next = MmuiFactory.eINSTANCE.createCheckBox
-					courant.next.id = pollQuestion.id
-					courant.next.question = pollQuestion.text
-					courant = courant.next
+					var pollQuestion = itQuestionsPoll.next()
+					var courant = MmuiFactory.eINSTANCE.createCheckBox as ElementUI
+					courant.id = pollQuestion.id
+					courant.question = pollQuestion.text
 					ui.listeElementUI.add(courant)
+					ui.firstElement = courant
+					while(itQuestionsPoll.hasNext())
+					{
+						pollQuestion = itQuestionsPoll.next()
+						courant.next = MmuiFactory.eINSTANCE.createCheckBox
+						courant.next.id = pollQuestion.id
+						courant.next.question = pollQuestion.text
+						courant = courant.next
+						ui.listeElementUI.add(courant)
+					}
 				}
-			}
+			]
 		}
 		
-		//**************************************************
-		//					Enregistrement
-		//**************************************************
-		// Create a resource set.
+		/****************************************************/
+		/* 					Enregistrement					*/
+		/****************************************************/
+		
   		var ResourceSet resourceSet = new ResourceSetImpl();
-
-	  	// Register the default resource factory -- only needed for stand-alone!
   		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
-
-		// Get the URI of the model file.
 		var URI fileURI = URI.createFileURI(new File("myUI.xmi").getAbsolutePath());
-
-		// Create a resource for this file.
   		var Resource resource = resourceSet.createResource(fileURI);
- 
-		// Add the book and writer objects to the contents.
 	  	resource.getContents().add(ui);
-
-		// Save the contents of the resource to the file system.
   		try
   		{
 		    resource.save(Collections.EMPTY_MAP);

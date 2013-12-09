@@ -6,7 +6,7 @@
     complianceLevel="5.0" copyrightFields="false" editPluginID="org.xtext.mapping.dsl.edit"
     editorPluginID="org.xtext.mapping.dsl.editor" runtimeVersion="2.9">
   <genPackages prefix="MyDsl" basePackage="org.xtext.example.mydsl" disposableProviderFactory="true"
-      fileExtensions="mydsl" ecorePackage="MyDsl.ecore#/">
+      fileExtensions="ui" ecorePackage="MyDsl.ecore#/">
     <genClasses ecoreClass="MyDsl.ecore#//ListeQuestions">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//ListeQuestions/questions"/>
     </genClasses>

@@ -1,5 +1,6 @@
 package transformation;
 
+import com.google.common.base.Objects;
 import fr.esir.imse.PollSystemStandaloneSetup;
 import fr.esir.imse.pollSystem.Poll;
 import fr.esir.imse.pollSystem.PollSystem;
@@ -23,6 +24,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.xtext.example.mydsl.MyDslStandaloneSetup;
 import org.xtext.example.mydsl.myDsl.ListeQuestions;
 
@@ -57,51 +59,53 @@ public class Transformation {
     PollSystem ps = ((PollSystem) _parsingPollSystem);
     ListeQuestions _parsingMapping = this.parsingMapping(mappingFile);
     ListeQuestions map = ((ListeQuestions) _parsingMapping);
-    EList<Poll> _polls = ps.getPolls();
-    Iterator<Poll> _iterator = _polls.iterator();
-    Iterator<Poll> itPs = ((Iterator<Poll>) _iterator);
-    Layout ui = MmuiFactory.eINSTANCE.createLayout();
-    boolean _hasNext = itPs.hasNext();
-    if (_hasNext) {
-      Poll _next = itPs.next();
-      EList<Question> _questions = _next.getQuestions();
-      Iterator<Question> _iterator_1 = _questions.iterator();
-      Iterator<Question> itQuestionsPaul = ((Iterator<Question>) _iterator_1);
-      boolean _hasNext_1 = itQuestionsPaul.hasNext();
-      if (_hasNext_1) {
-        Question pollQuestion = itQuestionsPaul.next();
-        CheckBox _createCheckBox = MmuiFactory.eINSTANCE.createCheckBox();
-        ElementUI courant = ((ElementUI) _createCheckBox);
-        String _id = pollQuestion.getId();
-        courant.setId(_id);
-        String _text = pollQuestion.getText();
-        courant.setQuestion(_text);
-        EList<ElementUI> _listeElementUI = ui.getListeElementUI();
-        _listeElementUI.add(courant);
-        ui.setFirstElement(courant);
-        boolean _hasNext_2 = itQuestionsPaul.hasNext();
-        boolean _while = _hasNext_2;
-        while (_while) {
-          {
-            Question _next_1 = itQuestionsPaul.next();
-            pollQuestion = _next_1;
-            CheckBox _createCheckBox_1 = MmuiFactory.eINSTANCE.createCheckBox();
-            courant.setNext(_createCheckBox_1);
-            ElementUI _next_2 = courant.getNext();
-            String _id_1 = pollQuestion.getId();
-            _next_2.setId(_id_1);
-            ElementUI _next_3 = courant.getNext();
-            String _text_1 = pollQuestion.getText();
-            _next_3.setQuestion(_text_1);
-            ElementUI _next_4 = courant.getNext();
-            courant = _next_4;
-            EList<ElementUI> _listeElementUI_1 = ui.getListeElementUI();
-            _listeElementUI_1.add(courant);
+    final Layout ui = MmuiFactory.eINSTANCE.createLayout();
+    boolean _notEquals = (!Objects.equal(ps, null));
+    if (_notEquals) {
+      EList<Poll> _polls = ps.getPolls();
+      final Procedure1<Poll> _function = new Procedure1<Poll>() {
+        public void apply(final Poll poll) {
+          EList<Question> _questions = poll.getQuestions();
+          Iterator<Question> _iterator = _questions.iterator();
+          Iterator<Question> itQuestionsPoll = ((Iterator<Question>) _iterator);
+          boolean _hasNext = itQuestionsPoll.hasNext();
+          if (_hasNext) {
+            Question pollQuestion = itQuestionsPoll.next();
+            CheckBox _createCheckBox = MmuiFactory.eINSTANCE.createCheckBox();
+            ElementUI courant = ((ElementUI) _createCheckBox);
+            String _id = pollQuestion.getId();
+            courant.setId(_id);
+            String _text = pollQuestion.getText();
+            courant.setQuestion(_text);
+            EList<ElementUI> _listeElementUI = ui.getListeElementUI();
+            _listeElementUI.add(courant);
+            ui.setFirstElement(courant);
+            boolean _hasNext_1 = itQuestionsPoll.hasNext();
+            boolean _while = _hasNext_1;
+            while (_while) {
+              {
+                Question _next = itQuestionsPoll.next();
+                pollQuestion = _next;
+                CheckBox _createCheckBox_1 = MmuiFactory.eINSTANCE.createCheckBox();
+                courant.setNext(_createCheckBox_1);
+                ElementUI _next_1 = courant.getNext();
+                String _id_1 = pollQuestion.getId();
+                _next_1.setId(_id_1);
+                ElementUI _next_2 = courant.getNext();
+                String _text_1 = pollQuestion.getText();
+                _next_2.setQuestion(_text_1);
+                ElementUI _next_3 = courant.getNext();
+                courant = _next_3;
+                EList<ElementUI> _listeElementUI_1 = ui.getListeElementUI();
+                _listeElementUI_1.add(courant);
+              }
+              boolean _hasNext_2 = itQuestionsPoll.hasNext();
+              _while = _hasNext_2;
+            }
           }
-          boolean _hasNext_3 = itQuestionsPaul.hasNext();
-          _while = _hasNext_3;
         }
-      }
+      };
+      IterableExtensions.<Poll>forEach(_polls, _function);
     }
     ResourceSetImpl _resourceSetImpl = new ResourceSetImpl();
     ResourceSet resourceSet = _resourceSetImpl;

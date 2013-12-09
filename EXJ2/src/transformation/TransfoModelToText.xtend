@@ -1,12 +1,15 @@
 package transformation
 
+import java.io.File
+import mmui.CheckBox
+import mmui.ElementUI
+import mmui.Layout
+import org.eclipse.emf.common.util.URI
+import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
-import org.eclipse.emf.common.util.URI
-import mmui.Layout
-import mmui.impl.CheckBoxImpl
-import mmui.ElementUI
-import mmui.CheckBox
+import java.io.PrintWriter
+import java.io.FileWriter
 
 class TransfoModelToText {
 	def Layout loadXMI(String fileName)
@@ -17,7 +20,7 @@ class TransfoModelToText {
 		return loadedUI
 	}
 	
-	def transform(String fileNameXMI)
+	def transform(String fileNameXMI, String fileNameOut)
 	{
 		var lay = loadXMI(fileNameXMI)
 		var template = '''
@@ -27,7 +30,7 @@ class TransfoModelToText {
 			»
 			</html>
 		'''
-		print(template)
+		storeToFile(fileNameOut, template)
 	}
 	
 	def parcoursLayout(Layout lay)
@@ -45,7 +48,20 @@ class TransfoModelToText {
 	
 	def rendererCheckbox(CheckBox chk)
 	{
-		return '''<input type="checkbox" name="«chk.id»" value="1" />«chk.question»
+		return '''<input type="checkbox" name="«chk.id»" value="1" />«chk.question»<br>
 		'''
+	}
+	
+	def storeToFile(String fileNameOut, String contenu)
+	{
+		try{
+			var pr = new PrintWriter(new FileWriter(fileNameOut))
+			pr.print(contenu)
+			pr.close()
+		}
+		catch(Exception e)
+		{
+			println("Error writing to "+fileNameOut)
+		}
 	}
 }
