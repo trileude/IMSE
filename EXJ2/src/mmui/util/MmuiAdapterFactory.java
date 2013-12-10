@@ -100,6 +100,10 @@ public class MmuiAdapterFactory extends AdapterFactoryImpl {
 				return createLayoutAdapter();
 			}
 			@Override
+			public Adapter caseEnsembleQuestions(EnsembleQuestions object) {
+				return createEnsembleQuestionsAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -228,6 +232,20 @@ public class MmuiAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLayoutAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link mmui.EnsembleQuestions <em>Ensemble Questions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see mmui.EnsembleQuestions
+	 * @generated
+	 */
+	public Adapter createEnsembleQuestionsAdapter() {
 		return null;
 	}
 

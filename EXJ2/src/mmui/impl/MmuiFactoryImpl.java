@@ -64,6 +64,7 @@ public class MmuiFactoryImpl extends EFactoryImpl implements MmuiFactory {
 			case MmuiPackage.DROP_DOWN: return createDropDown();
 			case MmuiPackage.OPTIONS: return createOptions();
 			case MmuiPackage.LAYOUT: return createLayout();
+			case MmuiPackage.ENSEMBLE_QUESTIONS: return createEnsembleQuestions();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -147,6 +148,16 @@ public class MmuiFactoryImpl extends EFactoryImpl implements MmuiFactory {
 	public Layout createLayout() {
 		LayoutImpl layout = new LayoutImpl();
 		return layout;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EnsembleQuestions createEnsembleQuestions() {
+		EnsembleQuestionsImpl ensembleQuestions = new EnsembleQuestionsImpl();
+		return ensembleQuestions;
 	}
 
 	/**

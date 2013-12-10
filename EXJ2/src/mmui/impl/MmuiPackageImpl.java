@@ -5,6 +5,7 @@ package mmui.impl;
 import mmui.CheckBox;
 import mmui.DropDown;
 import mmui.ElementUI;
+import mmui.EnsembleQuestions;
 import mmui.Layout;
 import mmui.MmuiFactory;
 import mmui.MmuiPackage;
@@ -82,6 +83,13 @@ public class MmuiPackageImpl extends EPackageImpl implements MmuiPackage {
 	 * @generated
 	 */
 	private EClass layoutEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass ensembleQuestionsEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -320,6 +328,24 @@ public class MmuiPackageImpl extends EPackageImpl implements MmuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getEnsembleQuestions() {
+		return ensembleQuestionsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEnsembleQuestions_ListeSousQuestion() {
+		return (EReference)ensembleQuestionsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MmuiFactory getMmuiFactory() {
 		return (MmuiFactory)getEFactoryInstance();
 	}
@@ -369,6 +395,9 @@ public class MmuiPackageImpl extends EPackageImpl implements MmuiPackage {
 		layoutEClass = createEClass(LAYOUT);
 		createEReference(layoutEClass, LAYOUT__FIRST_ELEMENT);
 		createEReference(layoutEClass, LAYOUT__LISTE_ELEMENT_UI);
+
+		ensembleQuestionsEClass = createEClass(ENSEMBLE_QUESTIONS);
+		createEReference(ensembleQuestionsEClass, ENSEMBLE_QUESTIONS__LISTE_SOUS_QUESTION);
 	}
 
 	/**
@@ -404,6 +433,7 @@ public class MmuiPackageImpl extends EPackageImpl implements MmuiPackage {
 		textEClass.getESuperTypes().add(this.getElementUI());
 		textAreaEClass.getESuperTypes().add(this.getElementUI());
 		dropDownEClass.getESuperTypes().add(this.getElementUI());
+		ensembleQuestionsEClass.getESuperTypes().add(this.getElementUI());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(elementUIEClass, ElementUI.class, "ElementUI", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -432,6 +462,9 @@ public class MmuiPackageImpl extends EPackageImpl implements MmuiPackage {
 		initEClass(layoutEClass, Layout.class, "Layout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLayout_FirstElement(), this.getElementUI(), null, "firstElement", null, 0, 1, Layout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLayout_ListeElementUI(), this.getElementUI(), null, "listeElementUI", null, 0, -1, Layout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(ensembleQuestionsEClass, EnsembleQuestions.class, "EnsembleQuestions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEnsembleQuestions_ListeSousQuestion(), this.getElementUI(), null, "listeSousQuestion", null, 1, -1, EnsembleQuestions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

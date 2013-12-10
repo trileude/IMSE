@@ -516,6 +516,71 @@ public interface MmuiPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link mmui.impl.EnsembleQuestionsImpl <em>Ensemble Questions</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mmui.impl.EnsembleQuestionsImpl
+	 * @see mmui.impl.MmuiPackageImpl#getEnsembleQuestions()
+	 * @generated
+	 */
+	int ENSEMBLE_QUESTIONS = 8;
+
+	/**
+	 * The feature id for the '<em><b>Next</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENSEMBLE_QUESTIONS__NEXT = ELEMENT_UI__NEXT;
+
+	/**
+	 * The feature id for the '<em><b>Question</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENSEMBLE_QUESTIONS__QUESTION = ELEMENT_UI__QUESTION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENSEMBLE_QUESTIONS__ID = ELEMENT_UI__ID;
+
+	/**
+	 * The feature id for the '<em><b>Liste Sous Question</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENSEMBLE_QUESTIONS__LISTE_SOUS_QUESTION = ELEMENT_UI_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Ensemble Questions</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENSEMBLE_QUESTIONS_FEATURE_COUNT = ELEMENT_UI_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Ensemble Questions</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENSEMBLE_QUESTIONS_OPERATION_COUNT = ELEMENT_UI_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link mmui.ElementUI <em>Element UI</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -717,6 +782,27 @@ public interface MmuiPackage extends EPackage {
 	EReference getLayout_ListeElementUI();
 
 	/**
+	 * Returns the meta object for class '{@link mmui.EnsembleQuestions <em>Ensemble Questions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ensemble Questions</em>'.
+	 * @see mmui.EnsembleQuestions
+	 * @generated
+	 */
+	EClass getEnsembleQuestions();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mmui.EnsembleQuestions#getListeSousQuestion <em>Liste Sous Question</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Liste Sous Question</em>'.
+	 * @see mmui.EnsembleQuestions#getListeSousQuestion()
+	 * @see #getEnsembleQuestions()
+	 * @generated
+	 */
+	EReference getEnsembleQuestions_ListeSousQuestion();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -906,6 +992,24 @@ public interface MmuiPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LAYOUT__LISTE_ELEMENT_UI = eINSTANCE.getLayout_ListeElementUI();
+
+		/**
+		 * The meta object literal for the '{@link mmui.impl.EnsembleQuestionsImpl <em>Ensemble Questions</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mmui.impl.EnsembleQuestionsImpl
+		 * @see mmui.impl.MmuiPackageImpl#getEnsembleQuestions()
+		 * @generated
+		 */
+		EClass ENSEMBLE_QUESTIONS = eINSTANCE.getEnsembleQuestions();
+
+		/**
+		 * The meta object literal for the '<em><b>Liste Sous Question</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENSEMBLE_QUESTIONS__LISTE_SOUS_QUESTION = eINSTANCE.getEnsembleQuestions_ListeSousQuestion();
 
 	}
 

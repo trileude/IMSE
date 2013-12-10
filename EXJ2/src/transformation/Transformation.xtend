@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
 import org.xtext.example.mydsl.MyDslStandaloneSetup
 import org.xtext.example.mydsl.myDsl.ListeQuestions
 import org.xtext.example.mydsl.myDsl.Question
+import fr.esir.imse.pollSystem.Option
+import mmui.EnsembleQuestions
 
 class Transformation {
 	
@@ -28,7 +30,6 @@ class Transformation {
   		PollSystemStandaloneSetup.doSetup
   		var resource = resourceSet.getResource(URI.createURI(nomFichier), true)
   		var ps = resource.contents.head as PollSystem
-  		//println(ps.polls.size)
   		return(ps)
 	}
 	
@@ -40,15 +41,14 @@ class Transformation {
   		MyDslStandaloneSetup.doSetup
   		var resource = resourceSet.getResource(URI.createURI(nomFichier), true)
   		var listeQuestions = resource.contents.head as ListeQuestions
-  		//println(listeQuestions.toString());
   		return(listeQuestions)
 	}
 	
 	def void tranform(String pollSystemFile, String mappingFile){
 		
 		//parsing
-		var ps = parsingPollSystem(pollSystemFile) as PollSystem
-		var map = parsingMapping(mappingFile) as ListeQuestions
+		val ps = parsingPollSystem(pollSystemFile) as PollSystem
+		val map = parsingMapping(mappingFile) as ListeQuestions
 		
 		//var itMap = map.questions.iterator as Iterator<Question>
 		
@@ -61,12 +61,13 @@ class Transformation {
 				if(itQuestionsPoll.hasNext())
 				{
 					var pollQuestion = itQuestionsPoll.next()
-					var courant = MmuiFactory.eINSTANCE.createCheckBox as ElementUI
+					val courant = MmuiFactory.eINSTANCE.createEnsembleQuestions()
 					courant.id = pollQuestion.id
 					courant.question = pollQuestion.text
+					construireListeSousQuestion(map, courant, pollQuestion)
 					ui.listeElementUI.add(courant)
 					ui.firstElement = courant
-					while(itQuestionsPoll.hasNext())
+					/*while(itQuestionsPoll.hasNext())
 					{
 						pollQuestion = itQuestionsPoll.next()
 						courant.next = MmuiFactory.eINSTANCE.createCheckBox
@@ -74,13 +75,13 @@ class Transformation {
 						courant.next.question = pollQuestion.text
 						courant = courant.next
 						ui.listeElementUI.add(courant)
-					}
+					}*/
 				}
 			]
 		}
 		
 		/****************************************************/
-		/* 					Enregistrement					*/
+		/* 				Enregistrement XMI					*/
 		/****************************************************/
 		
   		var ResourceSet resourceSet = new ResourceSetImpl();
@@ -94,4 +95,16 @@ class Transformation {
   		}
   		catch (IOException e) {}
 	}
+	
+	def construireListeSousQuestion(ListeQuestions mapUI, EnsembleQuestions courant, fr.esir.imse.pollSystem.Question pollQuestion) {
+		
+		pollQuestion.options.forEach[optionSousQuestion |
+			//trouver dans map les options pour savoir quoi mettre comme type
+			val question = MmuiFactory.eINSTANCE.createCheckBox
+			question.id = optionSousQuestion.id
+			question.question = optionSousQuestion.text
+			courant.listeSousQuestion.add(question)
+		]
+	}
+	
 }

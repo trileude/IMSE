@@ -30,4 +30,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="listeElementUI" upperBound="-1"
         eType="#//ElementUI" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnsembleQuestions" eSuperTypes="#//ElementUI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listeSousQuestion" lowerBound="1"
+        upperBound="-1" eType="#//ElementUI" containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>

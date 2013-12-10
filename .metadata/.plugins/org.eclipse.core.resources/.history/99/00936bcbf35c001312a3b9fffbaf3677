@@ -1,9 +1,0 @@
-package transformation
-
-class transfoModelToText {
-	def loadXMI(String fileName)
-	{
-		var loadedModel = resourceSet.getResource(fileName, true)
-		var UI loadedUI = loadedModel.contents.head as UI
-	}
-}
