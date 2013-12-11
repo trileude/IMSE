@@ -1,5 +1,6 @@
+qAime : CheckBox
 r1 : Text
 r2 : CheckBox
-q2 : Text
+q2 : Radio
 q3 : CheckBox
 p3 : Radio

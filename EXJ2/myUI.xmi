@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <IMSE:MetaLayout xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:IMSE="IMSE" firstElement="//@listeLayout.0">
   <listeLayout firstElement="//@listeLayout.0/@listeElementUI.0" next="//@listeLayout.1">
-    <listeElementUI xsi:type="IMSE:EnsembleQuestions" next="//@listeLayout.0/@listeElementUI.1" question="Nom">
-      <listeSousQuestion xsi:type="IMSE:Text" question="40" id="r1"/>
+    <listeElementUI xsi:type="IMSE:CheckBox" next="//@listeLayout.0/@listeElementUI.1" question="J'aime :" id="qAime">
+      <options value="Les patates"/>
+      <options value="Les haricots"/>
     </listeElementUI>
-    <listeElementUI xsi:type="IMSE:Text" next="//@listeLayout.0/@listeElementUI.2" question="Q2 ?" id="q2">
+    <listeElementUI xsi:type="IMSE:Radio" next="//@listeLayout.0/@listeElementUI.2" question="Q2 : " id="q2">
       <options value="Oui"/>
       <options value="Peut etre"/>
       <options value="Non"/>

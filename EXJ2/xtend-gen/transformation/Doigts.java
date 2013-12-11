@@ -8,8 +8,8 @@ public class Doigts {
 		
 		Transformation transformer = new Transformation();
 		transformer.tranform("questionnaire.ps","questionnaire.ui");
-		/*TransfoModelToText m2t = new TransfoModelToText();
-		m2t.transform("myUI.xmi", "questionnaire.html");*/
+		TransfoModelToText m2t = new TransfoModelToText();
+		m2t.transform("myUI.xmi", "questionnaire.html");
 	}
 
 }

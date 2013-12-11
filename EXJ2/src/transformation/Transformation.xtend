@@ -177,6 +177,7 @@ class Transformation {
 							layoutCourant.listeElementUI.add(courant)
 						}
 					}//fin iteration sur les PollSystem.Question
+					
 					if(flagPremierLayout == 1)
 					{
 						flagPremierLayout = 0;
