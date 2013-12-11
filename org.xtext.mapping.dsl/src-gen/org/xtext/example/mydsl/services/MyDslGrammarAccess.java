@@ -38,24 +38,24 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Question");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cIdAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cIdSTRINGTerminalRuleCall_0_0 = (RuleCall)cIdAssignment_0.eContents().get(0);
+		private final RuleCall cIdIDTerminalRuleCall_0_0 = (RuleCall)cIdAssignment_0.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cTypeTypeParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
 		private final Keyword cExclamationMarkKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Question:
-		//	id=STRING ":" type=Type "!";
+		//	id=ID ":" type=Type "!";
 		public ParserRule getRule() { return rule; }
 
-		//id=STRING ":" type=Type "!"
+		//id=ID ":" type=Type "!"
 		public Group getGroup() { return cGroup; }
 
-		//id=STRING
+		//id=ID
 		public Assignment getIdAssignment_0() { return cIdAssignment_0; }
 
-		//STRING
-		public RuleCall getIdSTRINGTerminalRuleCall_0_0() { return cIdSTRINGTerminalRuleCall_0_0; }
+		//ID
+		public RuleCall getIdIDTerminalRuleCall_0_0() { return cIdIDTerminalRuleCall_0_0; }
 
 		//":"
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
@@ -156,7 +156,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Question:
-	//	id=STRING ":" type=Type "!";
+	//	id=ID ":" type=Type "!";
 	public QuestionElements getQuestionAccess() {
 		return (pQuestion != null) ? pQuestion : (pQuestion = new QuestionElements());
 	}

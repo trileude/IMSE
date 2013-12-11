@@ -1,0 +1,6 @@
+.metadata/
+org.xtext.mapping.dsl.tests/bin/
+org.xtext.mapping.dsl.ui/bin/
+org.xtext.mapping.dsl/bin/
+EXJ2/bin/
+eclipse_k3/

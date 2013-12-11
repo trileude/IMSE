@@ -107,9 +107,9 @@ public class MmuiSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case MmuiPackage.OPTIONS: {
-				Options options = (Options)theEObject;
-				T result = caseOptions(options);
+			case MmuiPackage.OPTION: {
+				Option option = (Option)theEObject;
+				T result = caseOption(option);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -123,6 +123,13 @@ public class MmuiSwitch<T> extends Switch<T> {
 				EnsembleQuestions ensembleQuestions = (EnsembleQuestions)theEObject;
 				T result = caseEnsembleQuestions(ensembleQuestions);
 				if (result == null) result = caseElementUI(ensembleQuestions);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MmuiPackage.ERREUR: {
+				Erreur erreur = (Erreur)theEObject;
+				T result = caseErreur(erreur);
+				if (result == null) result = caseElementUI(erreur);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -221,17 +228,17 @@ public class MmuiSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Options</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Option</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Options</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Option</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseOptions(Options object) {
+	public T caseOption(Option object) {
 		return null;
 	}
 
@@ -262,6 +269,21 @@ public class MmuiSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEnsembleQuestions(EnsembleQuestions object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Erreur</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Erreur</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseErreur(Erreur object) {
 		return null;
 	}
 

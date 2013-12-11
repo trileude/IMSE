@@ -6,7 +6,7 @@ ListeQuestions:
 	questions+=Question*;
 
 Question:
-	id=STRING ":" type=Type'!';
+	id=ID ':' type=Type '!';
 
 Type:
-	('Radio'|'Text'|'TextArea'|'DropDown'|'CheckBox');
+	("Radio"|"Text"|"TextArea"|"DropDown"|"CheckBox");

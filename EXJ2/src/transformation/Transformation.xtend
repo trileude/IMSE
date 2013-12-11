@@ -1,13 +1,13 @@
 package transformation
 
 import fr.esir.imse.PollSystemStandaloneSetup
-import fr.esir.imse.pollSystem.Poll
 import fr.esir.imse.pollSystem.PollSystem
+import fr.esir.imse.pollSystem.Question
 import java.io.File
 import java.io.IOException
 import java.util.Collections
 import java.util.Iterator
-import mmui.ElementUI
+import mmui.EnsembleQuestions
 import mmui.MmuiFactory
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.resource.Resource
@@ -16,9 +16,8 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
 import org.xtext.example.mydsl.MyDslStandaloneSetup
 import org.xtext.example.mydsl.myDsl.ListeQuestions
-import org.xtext.example.mydsl.myDsl.Question
-import fr.esir.imse.pollSystem.Option
-import mmui.EnsembleQuestions
+import fr.esir.imse.pollSystem.Poll
+import mmui.ElementUI
 
 class Transformation {
 	
@@ -50,34 +49,131 @@ class Transformation {
 		val ps = parsingPollSystem(pollSystemFile) as PollSystem
 		val map = parsingMapping(mappingFile) as ListeQuestions
 		
-		//var itMap = map.questions.iterator as Iterator<Question>
-		
 		// Create model mmui
 		val ui = MmuiFactory.eINSTANCE.createLayout
 		if(ps != null)
 		{
-			ps.polls.forEach[poll |
-				var itQuestionsPoll = poll.questions.iterator as Iterator<fr.esir.imse.pollSystem.Question>
+			var itPollSystem = ps.polls.iterator as Iterator<Poll>
+			if(itPollSystem.hasNext())
+			{
+				var poll = itPollSystem.next() as Poll
+				var itQuestionsPoll = poll.questions.iterator as Iterator<Question>
 				if(itQuestionsPoll.hasNext())
 				{
 					var pollQuestion = itQuestionsPoll.next()
-					val courant = MmuiFactory.eINSTANCE.createEnsembleQuestions()
-					courant.id = pollQuestion.id
-					courant.question = pollQuestion.text
-					construireListeSousQuestion(map, courant, pollQuestion)
-					ui.listeElementUI.add(courant)
-					ui.firstElement = courant
-					/*while(itQuestionsPoll.hasNext())
+					var courant = null as ElementUI
+					if(pollQuestion.id != null)
+					{
+						//on le cherche
+						val idAchercher = pollQuestion.id
+						val typeTrouve = map.questions.filter[
+							id.equals(idAchercher)
+						].head
+						if(typeTrouve != null)
+						{
+							val questionUI = switch typeTrouve.type{
+								case 'Radio' : MmuiFactory.eINSTANCE.createRadio
+								case 'Text' : MmuiFactory.eINSTANCE.createText
+								case 'TextArea' : MmuiFactory.eINSTANCE.createTextArea
+								case 'DropDown' : MmuiFactory.eINSTANCE.createDropDown
+								case 'CheckBox' : MmuiFactory.eINSTANCE.createCheckBox
+								default : MmuiFactory.eINSTANCE.createErreur
+							}
+							pollQuestion.options.forEach[opt |
+								val optAajouter = MmuiFactory.eINSTANCE.createOption
+								optAajouter.value = opt.text
+								questionUI.options.add(optAajouter)
+							]
+							questionUI.id = pollQuestion.id
+							questionUI.question = pollQuestion.text
+							ui.listeElementUI.add(questionUI)
+							
+							courant = questionUI
+							ui.firstElement = questionUI
+						}
+						else
+						{
+							//on parcours les options
+							val questionUI = MmuiFactory.eINSTANCE.createEnsembleQuestions
+							questionUI.id = pollQuestion.id
+							questionUI.question = pollQuestion.text
+							construireListeSousQuestion(map, questionUI, pollQuestion)
+							ui.listeElementUI.add(questionUI)
+							
+							courant = questionUI
+							ui.firstElement = questionUI
+						}
+					}
+					else
+					{
+						//on parcours les options
+						val questionUI = MmuiFactory.eINSTANCE.createEnsembleQuestions
+						questionUI.question = pollQuestion.text
+						construireListeSousQuestion(map, questionUI, pollQuestion)
+						ui.listeElementUI.add(questionUI)
+						
+						courant = questionUI
+						ui.firstElement = questionUI
+					}
+					while(itQuestionsPoll.hasNext())
 					{
 						pollQuestion = itQuestionsPoll.next()
-						courant.next = MmuiFactory.eINSTANCE.createCheckBox
-						courant.next.id = pollQuestion.id
-						courant.next.question = pollQuestion.text
-						courant = courant.next
-						ui.listeElementUI.add(courant)
-					}*/
+						if(pollQuestion.id != null)
+						{
+							//on le cherche
+							val idAchercher = pollQuestion.id
+							val typeTrouve = map.questions.filter[
+								id.equals(idAchercher)
+							].head
+							if(typeTrouve != null)
+							{
+								val questionUI = switch typeTrouve.type{
+									case 'Radio' : MmuiFactory.eINSTANCE.createRadio
+									case 'Text' : MmuiFactory.eINSTANCE.createText
+									case 'TextArea' : MmuiFactory.eINSTANCE.createTextArea
+									case 'DropDown' : MmuiFactory.eINSTANCE.createDropDown
+									case 'CheckBox' : MmuiFactory.eINSTANCE.createCheckBox
+									default : MmuiFactory.eINSTANCE.createErreur
+								}
+								pollQuestion.options.forEach[opt |
+									val optAajouter = MmuiFactory.eINSTANCE.createOption
+									optAajouter.value = opt.text
+									questionUI.options.add(optAajouter)
+								]
+								questionUI.id = pollQuestion.id
+								questionUI.question = pollQuestion.text
+								
+								courant.next = questionUI
+								courant = courant.next
+								ui.listeElementUI.add(courant)
+							}
+							else
+							{
+								//on parcours les options
+								val questionUI = MmuiFactory.eINSTANCE.createEnsembleQuestions
+								questionUI.id = pollQuestion.id
+								questionUI.question = pollQuestion.text
+								construireListeSousQuestion(map, questionUI, pollQuestion)
+								
+								courant.next = questionUI
+								courant = courant.next
+								ui.listeElementUI.add(courant)
+							}
+						}
+						else
+						{
+							//on parcours les options
+							val questionUI = MmuiFactory.eINSTANCE.createEnsembleQuestions
+							questionUI.question = pollQuestion.text
+							construireListeSousQuestion(map, questionUI, pollQuestion)
+							
+							courant.next = questionUI
+							courant = courant.next
+							ui.listeElementUI.add(courant)
+						}
+					}
 				}
-			]
+			}
 		}
 		
 		/****************************************************/
@@ -96,14 +192,27 @@ class Transformation {
   		catch (IOException e) {}
 	}
 	
-	def construireListeSousQuestion(ListeQuestions mapUI, EnsembleQuestions courant, fr.esir.imse.pollSystem.Question pollQuestion) {
+	def construireListeSousQuestion(ListeQuestions mapUI, EnsembleQuestions courant, Question pollQuestion) {
 		
 		pollQuestion.options.forEach[optionSousQuestion |
-			//trouver dans map les options pour savoir quoi mettre comme type
-			val question = MmuiFactory.eINSTANCE.createCheckBox
-			question.id = optionSousQuestion.id
-			question.question = optionSousQuestion.text
-			courant.listeSousQuestion.add(question)
+			val optionTrouve = mapUI.questions.filter[
+				id.equals(optionSousQuestion.id)
+			].head
+			if(optionTrouve != null)
+			{
+				val question = switch optionTrouve.type{
+					case 'Radio' : MmuiFactory.eINSTANCE.createRadio
+					case 'Text' : MmuiFactory.eINSTANCE.createText
+					case 'TextArea' : MmuiFactory.eINSTANCE.createTextArea
+					case 'DropDown' : MmuiFactory.eINSTANCE.createDropDown
+					case 'CheckBox' : MmuiFactory.eINSTANCE.createCheckBox
+					default : MmuiFactory.eINSTANCE.createErreur
+				}
+				question.id = optionSousQuestion.id
+				question.question = optionSousQuestion.text
+				courant.listeSousQuestion.add(question)
+			}
+			//else il y a une erreur de sémantique :)
 		]
 	}
 	

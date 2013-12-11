@@ -76,13 +76,13 @@ public interface MmuiFactory extends EFactory {
 	DropDown createDropDown();
 
 	/**
-	 * Returns a new object of class '<em>Options</em>'.
+	 * Returns a new object of class '<em>Option</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Options</em>'.
+	 * @return a new object of class '<em>Option</em>'.
 	 * @generated
 	 */
-	Options createOptions();
+	Option createOption();
 
 	/**
 	 * Returns a new object of class '<em>Layout</em>'.
@@ -101,6 +101,15 @@ public interface MmuiFactory extends EFactory {
 	 * @generated
 	 */
 	EnsembleQuestions createEnsembleQuestions();
+
+	/**
+	 * Returns a new object of class '<em>Erreur</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Erreur</em>'.
+	 * @generated
+	 */
+	Erreur createErreur();
 
 	/**
 	 * Returns the package supported by this factory.

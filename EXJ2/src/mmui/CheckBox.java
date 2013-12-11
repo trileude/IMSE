@@ -3,6 +3,7 @@
 package mmui;
 
 
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Check Box</b></em>'.

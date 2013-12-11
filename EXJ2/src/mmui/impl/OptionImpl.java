@@ -3,7 +3,7 @@
 package mmui.impl;
 
 import mmui.MmuiPackage;
-import mmui.Options;
+import mmui.Option;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,18 +14,18 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Options</b></em>'.
+ * An implementation of the model object '<em><b>Option</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link mmui.impl.OptionsImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link mmui.impl.OptionImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class OptionsImpl extends MinimalEObjectImpl.Container implements Options {
+public class OptionImpl extends MinimalEObjectImpl.Container implements Option {
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -51,7 +51,7 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected OptionsImpl() {
+	protected OptionImpl() {
 		super();
 	}
 
@@ -62,7 +62,7 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MmuiPackage.Literals.OPTIONS;
+		return MmuiPackage.Literals.OPTION;
 	}
 
 	/**
@@ -83,7 +83,7 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MmuiPackage.OPTIONS__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, MmuiPackage.OPTION__VALUE, oldValue, value));
 	}
 
 	/**
@@ -94,7 +94,7 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MmuiPackage.OPTIONS__VALUE:
+			case MmuiPackage.OPTION__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -108,7 +108,7 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MmuiPackage.OPTIONS__VALUE:
+			case MmuiPackage.OPTION__VALUE:
 				setValue((String)newValue);
 				return;
 		}
@@ -123,7 +123,7 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MmuiPackage.OPTIONS__VALUE:
+			case MmuiPackage.OPTION__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -138,7 +138,7 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MmuiPackage.OPTIONS__VALUE:
+			case MmuiPackage.OPTION__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
@@ -160,4 +160,4 @@ public class OptionsImpl extends MinimalEObjectImpl.Container implements Options
 		return result.toString();
 	}
 
-} //OptionsImpl
+} //OptionImpl

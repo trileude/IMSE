@@ -6,19 +6,18 @@ import mmui.CheckBox;
 import mmui.DropDown;
 import mmui.ElementUI;
 import mmui.EnsembleQuestions;
+import mmui.Erreur;
 import mmui.Layout;
 import mmui.MmuiFactory;
 import mmui.MmuiPackage;
-import mmui.Options;
+import mmui.Option;
 import mmui.Radio;
 import mmui.Text;
 import mmui.TextArea;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -75,7 +74,7 @@ public class MmuiPackageImpl extends EPackageImpl implements MmuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass optionsEClass = null;
+	private EClass optionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,6 +89,13 @@ public class MmuiPackageImpl extends EPackageImpl implements MmuiPackage {
 	 * @generated
 	 */
 	private EClass ensembleQuestionsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass erreurEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -193,6 +199,15 @@ public class MmuiPackageImpl extends EPackageImpl implements MmuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getElementUI_Options() {
+		return (EReference)elementUIEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCheckBox() {
 		return checkBoxEClass;
 	}
@@ -211,26 +226,8 @@ public class MmuiPackageImpl extends EPackageImpl implements MmuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRadio_Options() {
-		return (EReference)radioEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getText() {
 		return textEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getText_NbCaracMax() {
-		return (EAttribute)textEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -247,24 +244,6 @@ public class MmuiPackageImpl extends EPackageImpl implements MmuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTextArea_NbColonnes() {
-		return (EAttribute)textAreaEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getTextArea_NbLignes() {
-		return (EAttribute)textAreaEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getDropDown() {
 		return dropDownEClass;
 	}
@@ -274,8 +253,8 @@ public class MmuiPackageImpl extends EPackageImpl implements MmuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDropDown_Options() {
-		return (EReference)dropDownEClass.getEStructuralFeatures().get(0);
+	public EClass getOption() {
+		return optionEClass;
 	}
 
 	/**
@@ -283,17 +262,8 @@ public class MmuiPackageImpl extends EPackageImpl implements MmuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getOptions() {
-		return optionsEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getOptions_Value() {
-		return (EAttribute)optionsEClass.getEStructuralFeatures().get(0);
+	public EAttribute getOption_Value() {
+		return (EAttribute)optionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -346,6 +316,15 @@ public class MmuiPackageImpl extends EPackageImpl implements MmuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getErreur() {
+		return erreurEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MmuiFactory getMmuiFactory() {
 		return (MmuiFactory)getEFactoryInstance();
 	}
@@ -373,24 +352,20 @@ public class MmuiPackageImpl extends EPackageImpl implements MmuiPackage {
 		createEReference(elementUIEClass, ELEMENT_UI__NEXT);
 		createEAttribute(elementUIEClass, ELEMENT_UI__QUESTION);
 		createEAttribute(elementUIEClass, ELEMENT_UI__ID);
+		createEReference(elementUIEClass, ELEMENT_UI__OPTIONS);
 
 		checkBoxEClass = createEClass(CHECK_BOX);
 
 		radioEClass = createEClass(RADIO);
-		createEReference(radioEClass, RADIO__OPTIONS);
 
 		textEClass = createEClass(TEXT);
-		createEAttribute(textEClass, TEXT__NB_CARAC_MAX);
 
 		textAreaEClass = createEClass(TEXT_AREA);
-		createEAttribute(textAreaEClass, TEXT_AREA__NB_COLONNES);
-		createEAttribute(textAreaEClass, TEXT_AREA__NB_LIGNES);
 
 		dropDownEClass = createEClass(DROP_DOWN);
-		createEReference(dropDownEClass, DROP_DOWN__OPTIONS);
 
-		optionsEClass = createEClass(OPTIONS);
-		createEAttribute(optionsEClass, OPTIONS__VALUE);
+		optionEClass = createEClass(OPTION);
+		createEAttribute(optionEClass, OPTION__VALUE);
 
 		layoutEClass = createEClass(LAYOUT);
 		createEReference(layoutEClass, LAYOUT__FIRST_ELEMENT);
@@ -398,6 +373,8 @@ public class MmuiPackageImpl extends EPackageImpl implements MmuiPackage {
 
 		ensembleQuestionsEClass = createEClass(ENSEMBLE_QUESTIONS);
 		createEReference(ensembleQuestionsEClass, ENSEMBLE_QUESTIONS__LISTE_SOUS_QUESTION);
+
+		erreurEClass = createEClass(ERREUR);
 	}
 
 	/**
@@ -434,30 +411,27 @@ public class MmuiPackageImpl extends EPackageImpl implements MmuiPackage {
 		textAreaEClass.getESuperTypes().add(this.getElementUI());
 		dropDownEClass.getESuperTypes().add(this.getElementUI());
 		ensembleQuestionsEClass.getESuperTypes().add(this.getElementUI());
+		erreurEClass.getESuperTypes().add(this.getElementUI());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(elementUIEClass, ElementUI.class, "ElementUI", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getElementUI_Next(), this.getElementUI(), null, "next", null, 0, 1, ElementUI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getElementUI_Question(), ecorePackage.getEString(), "question", null, 0, 1, ElementUI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getElementUI_Id(), ecorePackage.getEString(), "id", null, 0, 1, ElementUI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getElementUI_Options(), this.getOption(), null, "options", null, 0, -1, ElementUI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(checkBoxEClass, CheckBox.class, "CheckBox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(radioEClass, Radio.class, "Radio", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRadio_Options(), this.getOptions(), null, "options", null, 0, -1, Radio.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(textEClass, Text.class, "Text", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getText_NbCaracMax(), ecorePackage.getEInt(), "nbCaracMax", null, 0, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(textAreaEClass, TextArea.class, "TextArea", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTextArea_NbColonnes(), ecorePackage.getEInt(), "nbColonnes", null, 0, 1, TextArea.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTextArea_NbLignes(), ecorePackage.getEInt(), "nbLignes", null, 0, 1, TextArea.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dropDownEClass, DropDown.class, "DropDown", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDropDown_Options(), this.getOptions(), null, "options", null, 0, -1, DropDown.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(optionsEClass, Options.class, "Options", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOptions_Value(), ecorePackage.getEString(), "value", null, 0, 1, Options.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(optionEClass, Option.class, "Option", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOption_Value(), ecorePackage.getEString(), "value", null, 0, 1, Option.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(layoutEClass, Layout.class, "Layout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLayout_FirstElement(), this.getElementUI(), null, "firstElement", null, 0, 1, Layout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -465,6 +439,8 @@ public class MmuiPackageImpl extends EPackageImpl implements MmuiPackage {
 
 		initEClass(ensembleQuestionsEClass, EnsembleQuestions.class, "EnsembleQuestions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEnsembleQuestions_ListeSousQuestion(), this.getElementUI(), null, "listeSousQuestion", null, 1, -1, EnsembleQuestions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(erreurEClass, Erreur.class, "Erreur", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

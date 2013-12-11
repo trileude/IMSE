@@ -342,8 +342,8 @@ rule__Question__IdAssignment_0
     }
 :
 (
-{ before(grammarAccess.getQuestionAccess().getIdSTRINGTerminalRuleCall_0_0()); }
-	RULE_STRING{ after(grammarAccess.getQuestionAccess().getIdSTRINGTerminalRuleCall_0_0()); }
+{ before(grammarAccess.getQuestionAccess().getIdIDTerminalRuleCall_0_0()); }
+	RULE_ID{ after(grammarAccess.getQuestionAccess().getIdIDTerminalRuleCall_0_0()); }
 )
 
 ;

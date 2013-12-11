@@ -92,8 +92,8 @@ public class MmuiAdapterFactory extends AdapterFactoryImpl {
 				return createDropDownAdapter();
 			}
 			@Override
-			public Adapter caseOptions(Options object) {
-				return createOptionsAdapter();
+			public Adapter caseOption(Option object) {
+				return createOptionAdapter();
 			}
 			@Override
 			public Adapter caseLayout(Layout object) {
@@ -102,6 +102,10 @@ public class MmuiAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseEnsembleQuestions(EnsembleQuestions object) {
 				return createEnsembleQuestionsAdapter();
+			}
+			@Override
+			public Adapter caseErreur(Erreur object) {
+				return createErreurAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -208,16 +212,16 @@ public class MmuiAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link mmui.Options <em>Options</em>}'.
+	 * Creates a new adapter for an object of class '{@link mmui.Option <em>Option</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see mmui.Options
+	 * @see mmui.Option
 	 * @generated
 	 */
-	public Adapter createOptionsAdapter() {
+	public Adapter createOptionAdapter() {
 		return null;
 	}
 
@@ -246,6 +250,20 @@ public class MmuiAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEnsembleQuestionsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link mmui.Erreur <em>Erreur</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see mmui.Erreur
+	 * @generated
+	 */
+	public Adapter createErreurAdapter() {
 		return null;
 	}
 

@@ -2,6 +2,7 @@
  */
 package mmui;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link mmui.ElementUI#getNext <em>Next</em>}</li>
  *   <li>{@link mmui.ElementUI#getQuestion <em>Question</em>}</li>
  *   <li>{@link mmui.ElementUI#getId <em>Id</em>}</li>
+ *   <li>{@link mmui.ElementUI#getOptions <em>Options</em>}</li>
  * </ul>
  * </p>
  *
@@ -100,5 +102,21 @@ public interface ElementUI extends EObject {
 	 * @generated
 	 */
 	void setId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Options</b></em>' containment reference list.
+	 * The list contents are of type {@link mmui.Option}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Options</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Options</em>' containment reference list.
+	 * @see mmui.MmuiPackage#getElementUI_Options()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Option> getOptions();
 
 } // ElementUI

@@ -2,26 +2,26 @@
  */
 package mmui.impl;
 
+import mmui.Erreur;
 import mmui.MmuiPackage;
-import mmui.Text;
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Text</b></em>'.
+ * An implementation of the model object '<em><b>Erreur</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class TextImpl extends ElementUIImpl implements Text {
+public class ErreurImpl extends ElementUIImpl implements Erreur {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TextImpl() {
+	protected ErreurImpl() {
 		super();
 	}
 
@@ -32,7 +32,7 @@ public class TextImpl extends ElementUIImpl implements Text {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MmuiPackage.Literals.TEXT;
+		return MmuiPackage.Literals.ERREUR;
 	}
 
-} //TextImpl
+} //ErreurImpl

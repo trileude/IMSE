@@ -2,13 +2,19 @@
  */
 package mmui.impl;
 
+import java.util.Collection;
 import mmui.ElementUI;
 import mmui.MmuiPackage;
+import mmui.Option;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,6 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link mmui.impl.ElementUIImpl#getNext <em>Next</em>}</li>
  *   <li>{@link mmui.impl.ElementUIImpl#getQuestion <em>Question</em>}</li>
  *   <li>{@link mmui.impl.ElementUIImpl#getId <em>Id</em>}</li>
+ *   <li>{@link mmui.impl.ElementUIImpl#getOptions <em>Options</em>}</li>
  * </ul>
  * </p>
  *
@@ -75,6 +82,16 @@ public class ElementUIImpl extends MinimalEObjectImpl.Container implements Eleme
 	 * @ordered
 	 */
 	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getOptions() <em>Options</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOptions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Option> options;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -180,6 +197,32 @@ public class ElementUIImpl extends MinimalEObjectImpl.Container implements Eleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Option> getOptions() {
+		if (options == null) {
+			options = new EObjectContainmentEList<Option>(Option.class, this, MmuiPackage.ELEMENT_UI__OPTIONS);
+		}
+		return options;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case MmuiPackage.ELEMENT_UI__OPTIONS:
+				return ((InternalEList<?>)getOptions()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -190,6 +233,8 @@ public class ElementUIImpl extends MinimalEObjectImpl.Container implements Eleme
 				return getQuestion();
 			case MmuiPackage.ELEMENT_UI__ID:
 				return getId();
+			case MmuiPackage.ELEMENT_UI__OPTIONS:
+				return getOptions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -199,6 +244,7 @@ public class ElementUIImpl extends MinimalEObjectImpl.Container implements Eleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -210,6 +256,10 @@ public class ElementUIImpl extends MinimalEObjectImpl.Container implements Eleme
 				return;
 			case MmuiPackage.ELEMENT_UI__ID:
 				setId((String)newValue);
+				return;
+			case MmuiPackage.ELEMENT_UI__OPTIONS:
+				getOptions().clear();
+				getOptions().addAll((Collection<? extends Option>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -232,6 +282,9 @@ public class ElementUIImpl extends MinimalEObjectImpl.Container implements Eleme
 			case MmuiPackage.ELEMENT_UI__ID:
 				setId(ID_EDEFAULT);
 				return;
+			case MmuiPackage.ELEMENT_UI__OPTIONS:
+				getOptions().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -250,6 +303,8 @@ public class ElementUIImpl extends MinimalEObjectImpl.Container implements Eleme
 				return QUESTION_EDEFAULT == null ? question != null : !QUESTION_EDEFAULT.equals(question);
 			case MmuiPackage.ELEMENT_UI__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case MmuiPackage.ELEMENT_UI__OPTIONS:
+				return options != null && !options.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

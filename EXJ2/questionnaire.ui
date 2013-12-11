@@ -1,4 +1,5 @@
-p1 : Checkbox
-p2 : CheckBox
-p3 : RadioButton
-
+r1 : Text
+r2 : CheckBox
+q2 : Text
+q3 : CheckBox
+p3 : Radio

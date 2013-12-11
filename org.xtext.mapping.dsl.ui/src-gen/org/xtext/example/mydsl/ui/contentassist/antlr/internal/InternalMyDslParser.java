@@ -22,10 +22,10 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMyDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Radio'", "'Text'", "'TextArea'", "'DropDown'", "'CheckBox'", "':'", "'!'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Radio'", "'Text'", "'TextArea'", "'DropDown'", "'CheckBox'", "':'", "'!'"
     };
-    public static final int RULE_ID=5;
-    public static final int RULE_STRING=4;
+    public static final int RULE_ID=4;
+    public static final int RULE_STRING=6;
     public static final int T__16=16;
     public static final int T__15=15;
     public static final int T__17=17;
@@ -34,7 +34,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
     public static final int T__14=14;
     public static final int T__13=13;
     public static final int RULE_ANY_OTHER=10;
-    public static final int RULE_INT=6;
+    public static final int RULE_INT=5;
     public static final int RULE_WS=9;
     public static final int RULE_SL_COMMENT=8;
     public static final int EOF=-1;
@@ -127,7 +127,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==RULE_STRING) ) {
+                if ( (LA1_0==RULE_ID) ) {
                     alt1=1;
                 }
 
@@ -818,21 +818,21 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Question__IdAssignment_0"
-    // ../org.xtext.mapping.dsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:339:1: rule__Question__IdAssignment_0 : ( RULE_STRING ) ;
+    // ../org.xtext.mapping.dsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:339:1: rule__Question__IdAssignment_0 : ( RULE_ID ) ;
     public final void rule__Question__IdAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.mapping.dsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:343:1: ( ( RULE_STRING ) )
-            // ../org.xtext.mapping.dsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:344:1: ( RULE_STRING )
+            // ../org.xtext.mapping.dsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:343:1: ( ( RULE_ID ) )
+            // ../org.xtext.mapping.dsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:344:1: ( RULE_ID )
             {
-            // ../org.xtext.mapping.dsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:344:1: ( RULE_STRING )
-            // ../org.xtext.mapping.dsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:345:1: RULE_STRING
+            // ../org.xtext.mapping.dsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:344:1: ( RULE_ID )
+            // ../org.xtext.mapping.dsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:345:1: RULE_ID
             {
-             before(grammarAccess.getQuestionAccess().getIdSTRINGTerminalRuleCall_0_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Question__IdAssignment_0649); 
-             after(grammarAccess.getQuestionAccess().getIdSTRINGTerminalRuleCall_0_0()); 
+             before(grammarAccess.getQuestionAccess().getIdIDTerminalRuleCall_0_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Question__IdAssignment_0649); 
+             after(grammarAccess.getQuestionAccess().getIdIDTerminalRuleCall_0_0()); 
 
             }
 
@@ -925,7 +925,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Question__Group__3__Impl_in_rule__Question__Group__3546 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_17_in_rule__Question__Group__3__Impl574 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQuestion_in_rule__ListeQuestions__QuestionsAssignment618 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Question__IdAssignment_0649 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Question__IdAssignment_0649 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleType_in_rule__Question__TypeAssignment_2680 = new BitSet(new long[]{0x0000000000000002L});
 
 }

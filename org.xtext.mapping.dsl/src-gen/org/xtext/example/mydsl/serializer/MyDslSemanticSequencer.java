@@ -53,7 +53,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (id=STRING type=Type)
+	 *     (id=ID type=Type)
 	 */
 	protected void sequence_Question(EObject context, Question semanticObject) {
 		if(errorAcceptor != null) {
@@ -64,7 +64,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getQuestionAccess().getIdSTRINGTerminalRuleCall_0_0(), semanticObject.getId());
+		feeder.accept(grammarAccess.getQuestionAccess().getIdIDTerminalRuleCall_0_0(), semanticObject.getId());
 		feeder.accept(grammarAccess.getQuestionAccess().getTypeTypeParserRuleCall_2_0(), semanticObject.getType());
 		feeder.finish();
 	}

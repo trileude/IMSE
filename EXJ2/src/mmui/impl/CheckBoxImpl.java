@@ -4,7 +4,6 @@ package mmui.impl;
 
 import mmui.CheckBox;
 import mmui.MmuiPackage;
-
 import org.eclipse.emf.ecore.EClass;
 
 /**

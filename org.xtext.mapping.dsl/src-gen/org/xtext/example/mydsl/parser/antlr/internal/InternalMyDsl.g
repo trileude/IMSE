@@ -118,9 +118,9 @@ ruleQuestion returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_id_0_0=RULE_STRING
+		lv_id_0_0=RULE_ID
 		{
-			newLeafNode(lv_id_0_0, grammarAccess.getQuestionAccess().getIdSTRINGTerminalRuleCall_0_0()); 
+			newLeafNode(lv_id_0_0, grammarAccess.getQuestionAccess().getIdIDTerminalRuleCall_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -130,7 +130,7 @@ ruleQuestion returns [EObject current=null]
        			$current, 
        			"id",
         		lv_id_0_0, 
-        		"STRING");
+        		"ID");
 	    }
 
 )

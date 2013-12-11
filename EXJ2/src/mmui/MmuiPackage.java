@@ -94,13 +94,22 @@ public interface MmuiPackage extends EPackage {
 	int ELEMENT_UI__ID = 2;
 
 	/**
+	 * The feature id for the '<em><b>Options</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_UI__OPTIONS = 3;
+
+	/**
 	 * The number of structural features of the '<em>Element UI</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_UI_FEATURE_COUNT = 3;
+	int ELEMENT_UI_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Element UI</em>' class.
@@ -147,6 +156,15 @@ public interface MmuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int CHECK_BOX__ID = ELEMENT_UI__ID;
+
+	/**
+	 * The feature id for the '<em><b>Options</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHECK_BOX__OPTIONS = ELEMENT_UI__OPTIONS;
 
 	/**
 	 * The number of structural features of the '<em>Check Box</em>' class.
@@ -204,13 +222,13 @@ public interface MmuiPackage extends EPackage {
 	int RADIO__ID = ELEMENT_UI__ID;
 
 	/**
-	 * The feature id for the '<em><b>Options</b></em>' reference list.
+	 * The feature id for the '<em><b>Options</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RADIO__OPTIONS = ELEMENT_UI_FEATURE_COUNT + 0;
+	int RADIO__OPTIONS = ELEMENT_UI__OPTIONS;
 
 	/**
 	 * The number of structural features of the '<em>Radio</em>' class.
@@ -219,7 +237,7 @@ public interface MmuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RADIO_FEATURE_COUNT = ELEMENT_UI_FEATURE_COUNT + 1;
+	int RADIO_FEATURE_COUNT = ELEMENT_UI_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Radio</em>' class.
@@ -268,13 +286,13 @@ public interface MmuiPackage extends EPackage {
 	int TEXT__ID = ELEMENT_UI__ID;
 
 	/**
-	 * The feature id for the '<em><b>Nb Carac Max</b></em>' attribute.
+	 * The feature id for the '<em><b>Options</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT__NB_CARAC_MAX = ELEMENT_UI_FEATURE_COUNT + 0;
+	int TEXT__OPTIONS = ELEMENT_UI__OPTIONS;
 
 	/**
 	 * The number of structural features of the '<em>Text</em>' class.
@@ -283,7 +301,7 @@ public interface MmuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_FEATURE_COUNT = ELEMENT_UI_FEATURE_COUNT + 1;
+	int TEXT_FEATURE_COUNT = ELEMENT_UI_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Text</em>' class.
@@ -332,22 +350,13 @@ public interface MmuiPackage extends EPackage {
 	int TEXT_AREA__ID = ELEMENT_UI__ID;
 
 	/**
-	 * The feature id for the '<em><b>Nb Colonnes</b></em>' attribute.
+	 * The feature id for the '<em><b>Options</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_AREA__NB_COLONNES = ELEMENT_UI_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Nb Lignes</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXT_AREA__NB_LIGNES = ELEMENT_UI_FEATURE_COUNT + 1;
+	int TEXT_AREA__OPTIONS = ELEMENT_UI__OPTIONS;
 
 	/**
 	 * The number of structural features of the '<em>Text Area</em>' class.
@@ -356,7 +365,7 @@ public interface MmuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_AREA_FEATURE_COUNT = ELEMENT_UI_FEATURE_COUNT + 2;
+	int TEXT_AREA_FEATURE_COUNT = ELEMENT_UI_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Text Area</em>' class.
@@ -411,7 +420,7 @@ public interface MmuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DROP_DOWN__OPTIONS = ELEMENT_UI_FEATURE_COUNT + 0;
+	int DROP_DOWN__OPTIONS = ELEMENT_UI__OPTIONS;
 
 	/**
 	 * The number of structural features of the '<em>Drop Down</em>' class.
@@ -420,7 +429,7 @@ public interface MmuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DROP_DOWN_FEATURE_COUNT = ELEMENT_UI_FEATURE_COUNT + 1;
+	int DROP_DOWN_FEATURE_COUNT = ELEMENT_UI_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Drop Down</em>' class.
@@ -432,14 +441,14 @@ public interface MmuiPackage extends EPackage {
 	int DROP_DOWN_OPERATION_COUNT = ELEMENT_UI_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link mmui.impl.OptionsImpl <em>Options</em>}' class.
+	 * The meta object id for the '{@link mmui.impl.OptionImpl <em>Option</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see mmui.impl.OptionsImpl
-	 * @see mmui.impl.MmuiPackageImpl#getOptions()
+	 * @see mmui.impl.OptionImpl
+	 * @see mmui.impl.MmuiPackageImpl#getOption()
 	 * @generated
 	 */
-	int OPTIONS = 6;
+	int OPTION = 6;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -448,25 +457,25 @@ public interface MmuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPTIONS__VALUE = 0;
+	int OPTION__VALUE = 0;
 
 	/**
-	 * The number of structural features of the '<em>Options</em>' class.
+	 * The number of structural features of the '<em>Option</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPTIONS_FEATURE_COUNT = 1;
+	int OPTION_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Options</em>' class.
+	 * The number of operations of the '<em>Option</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPTIONS_OPERATION_COUNT = 0;
+	int OPTION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link mmui.impl.LayoutImpl <em>Layout</em>}' class.
@@ -553,6 +562,15 @@ public interface MmuiPackage extends EPackage {
 	int ENSEMBLE_QUESTIONS__ID = ELEMENT_UI__ID;
 
 	/**
+	 * The feature id for the '<em><b>Options</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENSEMBLE_QUESTIONS__OPTIONS = ELEMENT_UI__OPTIONS;
+
+	/**
 	 * The feature id for the '<em><b>Liste Sous Question</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -578,6 +596,71 @@ public interface MmuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENSEMBLE_QUESTIONS_OPERATION_COUNT = ELEMENT_UI_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link mmui.impl.ErreurImpl <em>Erreur</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mmui.impl.ErreurImpl
+	 * @see mmui.impl.MmuiPackageImpl#getErreur()
+	 * @generated
+	 */
+	int ERREUR = 9;
+
+	/**
+	 * The feature id for the '<em><b>Next</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ERREUR__NEXT = ELEMENT_UI__NEXT;
+
+	/**
+	 * The feature id for the '<em><b>Question</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ERREUR__QUESTION = ELEMENT_UI__QUESTION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ERREUR__ID = ELEMENT_UI__ID;
+
+	/**
+	 * The feature id for the '<em><b>Options</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ERREUR__OPTIONS = ELEMENT_UI__OPTIONS;
+
+	/**
+	 * The number of structural features of the '<em>Erreur</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ERREUR_FEATURE_COUNT = ELEMENT_UI_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Erreur</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ERREUR_OPERATION_COUNT = ELEMENT_UI_OPERATION_COUNT + 0;
 
 
 	/**
@@ -624,6 +707,17 @@ public interface MmuiPackage extends EPackage {
 	EAttribute getElementUI_Id();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link mmui.ElementUI#getOptions <em>Options</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Options</em>'.
+	 * @see mmui.ElementUI#getOptions()
+	 * @see #getElementUI()
+	 * @generated
+	 */
+	EReference getElementUI_Options();
+
+	/**
 	 * Returns the meta object for class '{@link mmui.CheckBox <em>Check Box</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -644,17 +738,6 @@ public interface MmuiPackage extends EPackage {
 	EClass getRadio();
 
 	/**
-	 * Returns the meta object for the reference list '{@link mmui.Radio#getOptions <em>Options</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Options</em>'.
-	 * @see mmui.Radio#getOptions()
-	 * @see #getRadio()
-	 * @generated
-	 */
-	EReference getRadio_Options();
-
-	/**
 	 * Returns the meta object for class '{@link mmui.Text <em>Text</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -663,17 +746,6 @@ public interface MmuiPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getText();
-
-	/**
-	 * Returns the meta object for the attribute '{@link mmui.Text#getNbCaracMax <em>Nb Carac Max</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nb Carac Max</em>'.
-	 * @see mmui.Text#getNbCaracMax()
-	 * @see #getText()
-	 * @generated
-	 */
-	EAttribute getText_NbCaracMax();
 
 	/**
 	 * Returns the meta object for class '{@link mmui.TextArea <em>Text Area</em>}'.
@@ -686,28 +758,6 @@ public interface MmuiPackage extends EPackage {
 	EClass getTextArea();
 
 	/**
-	 * Returns the meta object for the attribute '{@link mmui.TextArea#getNbColonnes <em>Nb Colonnes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nb Colonnes</em>'.
-	 * @see mmui.TextArea#getNbColonnes()
-	 * @see #getTextArea()
-	 * @generated
-	 */
-	EAttribute getTextArea_NbColonnes();
-
-	/**
-	 * Returns the meta object for the attribute '{@link mmui.TextArea#getNbLignes <em>Nb Lignes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nb Lignes</em>'.
-	 * @see mmui.TextArea#getNbLignes()
-	 * @see #getTextArea()
-	 * @generated
-	 */
-	EAttribute getTextArea_NbLignes();
-
-	/**
 	 * Returns the meta object for class '{@link mmui.DropDown <em>Drop Down</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -718,36 +768,25 @@ public interface MmuiPackage extends EPackage {
 	EClass getDropDown();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link mmui.DropDown#getOptions <em>Options</em>}'.
+	 * Returns the meta object for class '{@link mmui.Option <em>Option</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Options</em>'.
-	 * @see mmui.DropDown#getOptions()
-	 * @see #getDropDown()
+	 * @return the meta object for class '<em>Option</em>'.
+	 * @see mmui.Option
 	 * @generated
 	 */
-	EReference getDropDown_Options();
+	EClass getOption();
 
 	/**
-	 * Returns the meta object for class '{@link mmui.Options <em>Options</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Options</em>'.
-	 * @see mmui.Options
-	 * @generated
-	 */
-	EClass getOptions();
-
-	/**
-	 * Returns the meta object for the attribute '{@link mmui.Options#getValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute '{@link mmui.Option#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see mmui.Options#getValue()
-	 * @see #getOptions()
+	 * @see mmui.Option#getValue()
+	 * @see #getOption()
 	 * @generated
 	 */
-	EAttribute getOptions_Value();
+	EAttribute getOption_Value();
 
 	/**
 	 * Returns the meta object for class '{@link mmui.Layout <em>Layout</em>}'.
@@ -801,6 +840,16 @@ public interface MmuiPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEnsembleQuestions_ListeSousQuestion();
+
+	/**
+	 * Returns the meta object for class '{@link mmui.Erreur <em>Erreur</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Erreur</em>'.
+	 * @see mmui.Erreur
+	 * @generated
+	 */
+	EClass getErreur();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -860,6 +909,14 @@ public interface MmuiPackage extends EPackage {
 		EAttribute ELEMENT_UI__ID = eINSTANCE.getElementUI_Id();
 
 		/**
+		 * The meta object literal for the '<em><b>Options</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ELEMENT_UI__OPTIONS = eINSTANCE.getElementUI_Options();
+
+		/**
 		 * The meta object literal for the '{@link mmui.impl.CheckBoxImpl <em>Check Box</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -880,14 +937,6 @@ public interface MmuiPackage extends EPackage {
 		EClass RADIO = eINSTANCE.getRadio();
 
 		/**
-		 * The meta object literal for the '<em><b>Options</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RADIO__OPTIONS = eINSTANCE.getRadio_Options();
-
-		/**
 		 * The meta object literal for the '{@link mmui.impl.TextImpl <em>Text</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -896,14 +945,6 @@ public interface MmuiPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TEXT = eINSTANCE.getText();
-
-		/**
-		 * The meta object literal for the '<em><b>Nb Carac Max</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TEXT__NB_CARAC_MAX = eINSTANCE.getText_NbCaracMax();
 
 		/**
 		 * The meta object literal for the '{@link mmui.impl.TextAreaImpl <em>Text Area</em>}' class.
@@ -916,22 +957,6 @@ public interface MmuiPackage extends EPackage {
 		EClass TEXT_AREA = eINSTANCE.getTextArea();
 
 		/**
-		 * The meta object literal for the '<em><b>Nb Colonnes</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TEXT_AREA__NB_COLONNES = eINSTANCE.getTextArea_NbColonnes();
-
-		/**
-		 * The meta object literal for the '<em><b>Nb Lignes</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TEXT_AREA__NB_LIGNES = eINSTANCE.getTextArea_NbLignes();
-
-		/**
 		 * The meta object literal for the '{@link mmui.impl.DropDownImpl <em>Drop Down</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -942,22 +967,14 @@ public interface MmuiPackage extends EPackage {
 		EClass DROP_DOWN = eINSTANCE.getDropDown();
 
 		/**
-		 * The meta object literal for the '<em><b>Options</b></em>' containment reference list feature.
+		 * The meta object literal for the '{@link mmui.impl.OptionImpl <em>Option</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see mmui.impl.OptionImpl
+		 * @see mmui.impl.MmuiPackageImpl#getOption()
 		 * @generated
 		 */
-		EReference DROP_DOWN__OPTIONS = eINSTANCE.getDropDown_Options();
-
-		/**
-		 * The meta object literal for the '{@link mmui.impl.OptionsImpl <em>Options</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see mmui.impl.OptionsImpl
-		 * @see mmui.impl.MmuiPackageImpl#getOptions()
-		 * @generated
-		 */
-		EClass OPTIONS = eINSTANCE.getOptions();
+		EClass OPTION = eINSTANCE.getOption();
 
 		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -965,7 +982,7 @@ public interface MmuiPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OPTIONS__VALUE = eINSTANCE.getOptions_Value();
+		EAttribute OPTION__VALUE = eINSTANCE.getOption_Value();
 
 		/**
 		 * The meta object literal for the '{@link mmui.impl.LayoutImpl <em>Layout</em>}' class.
@@ -1010,6 +1027,16 @@ public interface MmuiPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENSEMBLE_QUESTIONS__LISTE_SOUS_QUESTION = eINSTANCE.getEnsembleQuestions_ListeSousQuestion();
+
+		/**
+		 * The meta object literal for the '{@link mmui.impl.ErreurImpl <em>Erreur</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mmui.impl.ErreurImpl
+		 * @see mmui.impl.MmuiPackageImpl#getErreur()
+		 * @generated
+		 */
+		EClass ERREUR = eINSTANCE.getErreur();
 
 	}
 
