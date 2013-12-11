@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link mmui.impl.LayoutImpl#getFirstElement <em>First Element</em>}</li>
  *   <li>{@link mmui.impl.LayoutImpl#getListeElementUI <em>Liste Element UI</em>}</li>
+ *   <li>{@link mmui.impl.LayoutImpl#getNext <em>Next</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,6 +54,16 @@ public class LayoutImpl extends MinimalEObjectImpl.Container implements Layout {
 	 * @ordered
 	 */
 	protected EList<ElementUI> listeElementUI;
+
+	/**
+	 * The cached value of the '{@link #getNext() <em>Next</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNext()
+	 * @generated
+	 * @ordered
+	 */
+	protected Layout next;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -128,6 +139,44 @@ public class LayoutImpl extends MinimalEObjectImpl.Container implements Layout {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Layout getNext() {
+		if (next != null && next.eIsProxy()) {
+			InternalEObject oldNext = (InternalEObject)next;
+			next = (Layout)eResolveProxy(oldNext);
+			if (next != oldNext) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MmuiPackage.LAYOUT__NEXT, oldNext, next));
+			}
+		}
+		return next;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Layout basicGetNext() {
+		return next;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNext(Layout newNext) {
+		Layout oldNext = next;
+		next = newNext;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MmuiPackage.LAYOUT__NEXT, oldNext, next));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -150,6 +199,9 @@ public class LayoutImpl extends MinimalEObjectImpl.Container implements Layout {
 				return basicGetFirstElement();
 			case MmuiPackage.LAYOUT__LISTE_ELEMENT_UI:
 				return getListeElementUI();
+			case MmuiPackage.LAYOUT__NEXT:
+				if (resolve) return getNext();
+				return basicGetNext();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -170,6 +222,9 @@ public class LayoutImpl extends MinimalEObjectImpl.Container implements Layout {
 				getListeElementUI().clear();
 				getListeElementUI().addAll((Collection<? extends ElementUI>)newValue);
 				return;
+			case MmuiPackage.LAYOUT__NEXT:
+				setNext((Layout)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -188,6 +243,9 @@ public class LayoutImpl extends MinimalEObjectImpl.Container implements Layout {
 			case MmuiPackage.LAYOUT__LISTE_ELEMENT_UI:
 				getListeElementUI().clear();
 				return;
+			case MmuiPackage.LAYOUT__NEXT:
+				setNext((Layout)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -204,6 +262,8 @@ public class LayoutImpl extends MinimalEObjectImpl.Container implements Layout {
 				return firstElement != null;
 			case MmuiPackage.LAYOUT__LISTE_ELEMENT_UI:
 				return listeElementUI != null && !listeElementUI.isEmpty();
+			case MmuiPackage.LAYOUT__NEXT:
+				return next != null;
 		}
 		return super.eIsSet(featureID);
 	}

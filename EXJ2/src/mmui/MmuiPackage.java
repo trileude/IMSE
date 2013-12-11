@@ -506,13 +506,22 @@ public interface MmuiPackage extends EPackage {
 	int LAYOUT__LISTE_ELEMENT_UI = 1;
 
 	/**
+	 * The feature id for the '<em><b>Next</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LAYOUT__NEXT = 2;
+
+	/**
 	 * The number of structural features of the '<em>Layout</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LAYOUT_FEATURE_COUNT = 2;
+	int LAYOUT_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Layout</em>' class.
@@ -661,6 +670,53 @@ public interface MmuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int ERREUR_OPERATION_COUNT = ELEMENT_UI_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link mmui.impl.MetaLayoutImpl <em>Meta Layout</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mmui.impl.MetaLayoutImpl
+	 * @see mmui.impl.MmuiPackageImpl#getMetaLayout()
+	 * @generated
+	 */
+	int META_LAYOUT = 10;
+
+	/**
+	 * The feature id for the '<em><b>First Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int META_LAYOUT__FIRST_ELEMENT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Liste Layout</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int META_LAYOUT__LISTE_LAYOUT = 1;
+
+	/**
+	 * The number of structural features of the '<em>Meta Layout</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int META_LAYOUT_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Meta Layout</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int META_LAYOUT_OPERATION_COUNT = 0;
 
 
 	/**
@@ -821,6 +877,17 @@ public interface MmuiPackage extends EPackage {
 	EReference getLayout_ListeElementUI();
 
 	/**
+	 * Returns the meta object for the reference '{@link mmui.Layout#getNext <em>Next</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Next</em>'.
+	 * @see mmui.Layout#getNext()
+	 * @see #getLayout()
+	 * @generated
+	 */
+	EReference getLayout_Next();
+
+	/**
 	 * Returns the meta object for class '{@link mmui.EnsembleQuestions <em>Ensemble Questions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -850,6 +917,38 @@ public interface MmuiPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getErreur();
+
+	/**
+	 * Returns the meta object for class '{@link mmui.MetaLayout <em>Meta Layout</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Meta Layout</em>'.
+	 * @see mmui.MetaLayout
+	 * @generated
+	 */
+	EClass getMetaLayout();
+
+	/**
+	 * Returns the meta object for the reference '{@link mmui.MetaLayout#getFirstElement <em>First Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>First Element</em>'.
+	 * @see mmui.MetaLayout#getFirstElement()
+	 * @see #getMetaLayout()
+	 * @generated
+	 */
+	EReference getMetaLayout_FirstElement();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mmui.MetaLayout#getListeLayout <em>Liste Layout</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Liste Layout</em>'.
+	 * @see mmui.MetaLayout#getListeLayout()
+	 * @see #getMetaLayout()
+	 * @generated
+	 */
+	EReference getMetaLayout_ListeLayout();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1011,6 +1110,14 @@ public interface MmuiPackage extends EPackage {
 		EReference LAYOUT__LISTE_ELEMENT_UI = eINSTANCE.getLayout_ListeElementUI();
 
 		/**
+		 * The meta object literal for the '<em><b>Next</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LAYOUT__NEXT = eINSTANCE.getLayout_Next();
+
+		/**
 		 * The meta object literal for the '{@link mmui.impl.EnsembleQuestionsImpl <em>Ensemble Questions</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1037,6 +1144,32 @@ public interface MmuiPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ERREUR = eINSTANCE.getErreur();
+
+		/**
+		 * The meta object literal for the '{@link mmui.impl.MetaLayoutImpl <em>Meta Layout</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mmui.impl.MetaLayoutImpl
+		 * @see mmui.impl.MmuiPackageImpl#getMetaLayout()
+		 * @generated
+		 */
+		EClass META_LAYOUT = eINSTANCE.getMetaLayout();
+
+		/**
+		 * The meta object literal for the '<em><b>First Element</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference META_LAYOUT__FIRST_ELEMENT = eINSTANCE.getMetaLayout_FirstElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Liste Layout</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference META_LAYOUT__LISTE_LAYOUT = eINSTANCE.getMetaLayout_ListeLayout();
 
 	}
 

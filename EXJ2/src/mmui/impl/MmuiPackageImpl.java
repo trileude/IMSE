@@ -8,6 +8,7 @@ import mmui.ElementUI;
 import mmui.EnsembleQuestions;
 import mmui.Erreur;
 import mmui.Layout;
+import mmui.MetaLayout;
 import mmui.MmuiFactory;
 import mmui.MmuiPackage;
 import mmui.Option;
@@ -96,6 +97,13 @@ public class MmuiPackageImpl extends EPackageImpl implements MmuiPackage {
 	 * @generated
 	 */
 	private EClass erreurEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass metaLayoutEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -298,6 +306,15 @@ public class MmuiPackageImpl extends EPackageImpl implements MmuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getLayout_Next() {
+		return (EReference)layoutEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEnsembleQuestions() {
 		return ensembleQuestionsEClass;
 	}
@@ -318,6 +335,33 @@ public class MmuiPackageImpl extends EPackageImpl implements MmuiPackage {
 	 */
 	public EClass getErreur() {
 		return erreurEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMetaLayout() {
+		return metaLayoutEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMetaLayout_FirstElement() {
+		return (EReference)metaLayoutEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMetaLayout_ListeLayout() {
+		return (EReference)metaLayoutEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -370,11 +414,16 @@ public class MmuiPackageImpl extends EPackageImpl implements MmuiPackage {
 		layoutEClass = createEClass(LAYOUT);
 		createEReference(layoutEClass, LAYOUT__FIRST_ELEMENT);
 		createEReference(layoutEClass, LAYOUT__LISTE_ELEMENT_UI);
+		createEReference(layoutEClass, LAYOUT__NEXT);
 
 		ensembleQuestionsEClass = createEClass(ENSEMBLE_QUESTIONS);
 		createEReference(ensembleQuestionsEClass, ENSEMBLE_QUESTIONS__LISTE_SOUS_QUESTION);
 
 		erreurEClass = createEClass(ERREUR);
+
+		metaLayoutEClass = createEClass(META_LAYOUT);
+		createEReference(metaLayoutEClass, META_LAYOUT__FIRST_ELEMENT);
+		createEReference(metaLayoutEClass, META_LAYOUT__LISTE_LAYOUT);
 	}
 
 	/**
@@ -436,11 +485,16 @@ public class MmuiPackageImpl extends EPackageImpl implements MmuiPackage {
 		initEClass(layoutEClass, Layout.class, "Layout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLayout_FirstElement(), this.getElementUI(), null, "firstElement", null, 0, 1, Layout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLayout_ListeElementUI(), this.getElementUI(), null, "listeElementUI", null, 0, -1, Layout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLayout_Next(), this.getLayout(), null, "next", null, 0, 1, Layout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ensembleQuestionsEClass, EnsembleQuestions.class, "EnsembleQuestions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEnsembleQuestions_ListeSousQuestion(), this.getElementUI(), null, "listeSousQuestion", null, 1, -1, EnsembleQuestions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(erreurEClass, Erreur.class, "Erreur", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(metaLayoutEClass, MetaLayout.class, "MetaLayout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMetaLayout_FirstElement(), this.getLayout(), null, "firstElement", null, 0, 1, MetaLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMetaLayout_ListeLayout(), this.getLayout(), null, "listeLayout", null, 0, -1, MetaLayout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

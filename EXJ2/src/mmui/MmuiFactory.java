@@ -112,6 +112,15 @@ public interface MmuiFactory extends EFactory {
 	Erreur createErreur();
 
 	/**
+	 * Returns a new object of class '<em>Meta Layout</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Meta Layout</em>'.
+	 * @generated
+	 */
+	MetaLayout createMetaLayout();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

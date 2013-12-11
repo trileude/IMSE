@@ -66,6 +66,7 @@ public class MmuiFactoryImpl extends EFactoryImpl implements MmuiFactory {
 			case MmuiPackage.LAYOUT: return createLayout();
 			case MmuiPackage.ENSEMBLE_QUESTIONS: return createEnsembleQuestions();
 			case MmuiPackage.ERREUR: return createErreur();
+			case MmuiPackage.META_LAYOUT: return createMetaLayout();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -169,6 +170,16 @@ public class MmuiFactoryImpl extends EFactoryImpl implements MmuiFactory {
 	public Erreur createErreur() {
 		ErreurImpl erreur = new ErreurImpl();
 		return erreur;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MetaLayout createMetaLayout() {
+		MetaLayoutImpl metaLayout = new MetaLayoutImpl();
+		return metaLayout;
 	}
 
 	/**

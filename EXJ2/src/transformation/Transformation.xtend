@@ -18,6 +18,7 @@ import org.xtext.example.mydsl.MyDslStandaloneSetup
 import org.xtext.example.mydsl.myDsl.ListeQuestions
 import fr.esir.imse.pollSystem.Poll
 import mmui.ElementUI
+import mmui.Layout
 
 class Transformation {
 	
@@ -50,12 +51,16 @@ class Transformation {
 		val map = parsingMapping(mappingFile) as ListeQuestions
 		
 		// Create model mmui
-		val ui = MmuiFactory.eINSTANCE.createLayout
-		if(ps != null)
+		val ui = MmuiFactory.eINSTANCE.createMetaLayout
+		if(ps != null && map != null)
 		{
 			var itPollSystem = ps.polls.iterator as Iterator<Poll>
-			if(itPollSystem.hasNext())
+			var flagPremierLayout = 1;
+			var layoutCourant = null as Layout
+			var layoutOld = null as Layout //utile pour le chainage
+			while(itPollSystem.hasNext())
 			{
+				layoutCourant = MmuiFactory.eINSTANCE.createLayout
 				var poll = itPollSystem.next() as Poll
 				var itQuestionsPoll = poll.questions.iterator as Iterator<Question>
 				if(itQuestionsPoll.hasNext())
@@ -86,10 +91,10 @@ class Transformation {
 							]
 							questionUI.id = pollQuestion.id
 							questionUI.question = pollQuestion.text
-							ui.listeElementUI.add(questionUI)
+							layoutCourant.listeElementUI.add(questionUI)
 							
 							courant = questionUI
-							ui.firstElement = questionUI
+							layoutCourant.firstElement = questionUI
 						}
 						else
 						{
@@ -98,10 +103,10 @@ class Transformation {
 							questionUI.id = pollQuestion.id
 							questionUI.question = pollQuestion.text
 							construireListeSousQuestion(map, questionUI, pollQuestion)
-							ui.listeElementUI.add(questionUI)
+							layoutCourant.listeElementUI.add(questionUI)
 							
 							courant = questionUI
-							ui.firstElement = questionUI
+							layoutCourant.firstElement = questionUI
 						}
 					}
 					else
@@ -110,10 +115,10 @@ class Transformation {
 						val questionUI = MmuiFactory.eINSTANCE.createEnsembleQuestions
 						questionUI.question = pollQuestion.text
 						construireListeSousQuestion(map, questionUI, pollQuestion)
-						ui.listeElementUI.add(questionUI)
+						layoutCourant.listeElementUI.add(questionUI)
 						
 						courant = questionUI
-						ui.firstElement = questionUI
+						layoutCourant.firstElement = questionUI
 					}
 					while(itQuestionsPoll.hasNext())
 					{
@@ -145,7 +150,7 @@ class Transformation {
 								
 								courant.next = questionUI
 								courant = courant.next
-								ui.listeElementUI.add(courant)
+								layoutCourant.listeElementUI.add(courant)
 							}
 							else
 							{
@@ -157,7 +162,7 @@ class Transformation {
 								
 								courant.next = questionUI
 								courant = courant.next
-								ui.listeElementUI.add(courant)
+								layoutCourant.listeElementUI.add(courant)
 							}
 						}
 						else
@@ -169,10 +174,23 @@ class Transformation {
 							
 							courant.next = questionUI
 							courant = courant.next
-							ui.listeElementUI.add(courant)
+							layoutCourant.listeElementUI.add(courant)
 						}
+					}//fin iteration sur les PollSystem.Question
+					if(flagPremierLayout == 1)
+					{
+						flagPremierLayout = 0;
+						ui.listeLayout.add(layoutCourant)
+						ui.firstElement = layoutCourant
+						layoutOld = layoutCourant
 					}
-				}
+					else
+					{
+						ui.listeLayout.add(layoutCourant)
+						layoutOld.next = layoutCourant
+						layoutOld = layoutOld.next
+					}
+				}//fin iteration sur les Polls
 			}
 		}
 		

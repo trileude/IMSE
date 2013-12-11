@@ -20,10 +20,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="firstElement" eType="#//ElementUI"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="listeElementUI" upperBound="-1"
         eType="#//ElementUI" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="#//Layout"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnsembleQuestions" eSuperTypes="#//ElementUI">
     <eStructuralFeatures xsi:type="ecore:EReference" name="listeSousQuestion" lowerBound="1"
         upperBound="-1" eType="#//ElementUI" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Erreur" eSuperTypes="#//ElementUI"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MetaLayout">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="firstElement" eType="#//Layout"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listeLayout" upperBound="-1"
+        eType="#//Layout" containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>
