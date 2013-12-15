@@ -1,6 +1,7 @@
 qAime : CheckBox
-r1 : Text
-r2 : CheckBox
 q2 : Radio
-q3 : CheckBox
-p3 : Radio
+q3 : DropDown
+txt : TextArea
+name : Text
+firstName : Text
+majeur : CheckBox

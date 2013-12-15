@@ -22,10 +22,16 @@ Poll p1{
 	}
 }
 Poll p2{
-	Question q1 {
-		"Prenom"
+	Question txt {
+		"Présentez-vous succintement"
 			options
 				r1 => "40"
-				r0 => "Papa"
+	}
+	Question {
+		"Présentez-vous"
+			options
+				name => "Nom :"
+				firstName => "Prénom :"
+				majeur => "Je suis majeur"
 	}
 }

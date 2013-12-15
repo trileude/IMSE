@@ -10,7 +10,7 @@
       <options value="Peut etre"/>
       <options value="Non"/>
     </listeElementUI>
-    <listeElementUI xsi:type="IMSE:CheckBox" question="Q3 ?" id="q3">
+    <listeElementUI xsi:type="IMSE:DropDown" question="Q3 ?" id="q3">
       <options value="Oui"/>
       <options value="Peut etre"/>
       <options value="Non"/>
@@ -18,8 +18,12 @@
     </listeElementUI>
   </listeLayout>
   <listeLayout firstElement="//@listeLayout.1/@listeElementUI.0">
-    <listeElementUI xsi:type="IMSE:EnsembleQuestions" question="Prenom" id="q1">
-      <listeSousQuestion xsi:type="IMSE:Text" question="40" id="r1"/>
+    <listeElementUI xsi:type="IMSE:TextArea" next="//@listeLayout.1/@listeElementUI.1" question="Pr&#xe9;sentez-vous succintement" id="txt">
+      <options value="40"/>
+    </listeElementUI>
+    <listeElementUI xsi:type="IMSE:EnsembleQuestions" question="Pr&#xe9;sentez-vous">
+      <listeSousQuestion xsi:type="IMSE:Text" question="Nom :" id="name"/>
+      <listeSousQuestion xsi:type="IMSE:Text" question="Pr&#xe9;nom :" id="firstName"/>
     </listeElementUI>
   </listeLayout>
 </IMSE:MetaLayout>

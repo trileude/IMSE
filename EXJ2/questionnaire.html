@@ -1,4 +1,10 @@
 <html>
+<head>
+	<meta charset="UTF-8">
+	<title>Sondage généré</title>
+	<link rel='stylesheet' href='style.css' type='text/css' media='all' />
+</head>
+<body>
 <form action="" method="GET" name="">
 <fieldset>
 	<label  id="qAime">
@@ -10,11 +16,34 @@
 	<input type="radio" name="q2" value="0" checked />Oui <input type="radio" name="q2" value="1" />Peut etre <input type="radio" name="q2" value="2" />Non <br><br><label  id="q3">
 		Q3 ?
 	</label>
-	<input type="checkbox" name="Oui" value="1" />Oui<br><input type="checkbox" name="Peut etre" value="1" />Peut etre<br><input type="checkbox" name="Non" value="1" />Non<br><input type="checkbox" name="Je sais pas" value="1" />Je sais pas<br><br>
+	<select name="q3">
+	<option value="0"/>Oui</option>
+	<option value="1"/>Peut etre</option>
+	<option value="2"/>Non</option>
+	<option value="3"/>Je sais pas</option>
+	</select><br><br>
 </fieldset>
 </form>
 <form action="" method="GET" name="">
 <fieldset>
+	<label  id="txt">
+		Présentez-vous succintement
+	</label>
+	<textarea rows="4" cols="50" name="txt"></textarea>
+	<br><br><fieldset>
+		<legend>Présentez-vous</legend>
+			<label  id="name">
+				Nom :
+			</label>
+			<input type="text" name="name" />
+			<br><br><label  id="firstName">
+				Prénom :
+			</label>
+			<input type="text" name="firstName" />
+			<br><br>
+	</fieldset>
+	<br><br>
 </fieldset>
 </form>
+</body>
 </html>
