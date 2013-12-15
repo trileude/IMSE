@@ -24,6 +24,7 @@
     <listeElementUI xsi:type="IMSE:EnsembleQuestions" question="Pr&#xe9;sentez-vous">
       <listeSousQuestion xsi:type="IMSE:Text" question="Nom :" id="name"/>
       <listeSousQuestion xsi:type="IMSE:Text" question="Pr&#xe9;nom :" id="firstName"/>
+      <listeSousQuestion xsi:type="IMSE:CheckBox" question="Je suis majeur" id="majeur"/>
     </listeElementUI>
   </listeLayout>
 </IMSE:MetaLayout>
