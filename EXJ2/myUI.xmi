@@ -25,6 +25,8 @@
       <listeSousQuestion xsi:type="IMSE:Text" question="Nom :" id="name"/>
       <listeSousQuestion xsi:type="IMSE:Text" question="Pr&#xe9;nom :" id="firstName"/>
       <listeSousQuestion xsi:type="IMSE:CheckBox" question="Je suis majeur" id="majeur"/>
+      <listeSousQuestion xsi:type="IMSE:Radio" question="choix1" id="rd"/>
+      <listeSousQuestion xsi:type="IMSE:DropDown" question="liste d&#xe9;roulante" id="liste"/>
     </listeElementUI>
   </listeLayout>
 </IMSE:MetaLayout>

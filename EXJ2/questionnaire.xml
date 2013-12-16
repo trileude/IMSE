@@ -1,0 +1,90 @@
+                   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_centerVertical="true"
+android:orientation="vertical"
+ >
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Sondage(s) généré(s)" />
+
+                                       <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical"
+                     >
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sondage généré" />
+                                                        <label  id="qAime">
+                                                                J'aime :
+                                                        </label>
+                                                            <CheckBox
+                                                                android:id="@+id/Les patates"
+                                                                android:layout_width="wrap_content"
+                                                                android:layout_height="wrap_content"
+                                                                android:text="CheckBox" />    <CheckBox
+                                                                android:id="@+id/Les haricots"
+                                                                android:layout_width="wrap_content"
+                                                                android:layout_height="wrap_content"
+                                                                android:text="CheckBox" /><br><RadioButton android:id="@+id/q2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Q2 : " /><br><br> <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="DropDown Android need Java code , need more tiome, sorry" />
+                                                </LinearLayoiut>
+                                       <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical"
+                     >
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sondage généré" />
+                                                        <TextView
+                                                                android:id="@+id/txt"
+                                                                android:layout_width="wrap_content"
+                                                                android:layout_height="wrap_content"
+                                                        		android:text="Présentez-vous succintement"/>
+                                                        						    <EditText
+                                                                android:id="@+id/txt"
+                                                                android:layout_width="fill_parent"
+                                                                android:layout_height="fill_parent"
+                                                        		android:text="Présentez-vous succintement"/>
+                                                        <br><br><fieldset>
+                                                                <legend>Présentez-vous</legend>
+                                                                        <TextView
+                                                                        					        android:id="@+id/name"
+                                                                        					        android:layout_width="wrap_content"
+                                                                        					        android:layout_height="wrap_content"
+                                                                        							android:text="Nom :"/>
+                                                                        											    <EditText
+                                                                        					        android:id="@+id/name"
+                                                                        					        android:layout_width="wrap_content"
+                                                                        					        android:layout_height="wrap_content"
+                                                                        							android:text="Nom :"/>
+                                                                        <br><br><TextView
+                                                                        					        android:id="@+id/firstName"
+                                                                        					        android:layout_width="wrap_content"
+                                                                        					        android:layout_height="wrap_content"
+                                                                        							android:text="Prénom :"/>
+                                                                        											    <EditText
+                                                                        					        android:id="@+id/firstName"
+                                                                        					        android:layout_width="wrap_content"
+                                                                        					        android:layout_height="wrap_content"
+                                                                        							android:text="Prénom :"/>
+                                                                        <br><br><CheckBox android:id="@+id/majeur" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Je suis majeur" /><br><label  id="rd">
+                                                                                choix1
+                                                                        </label>
+                                                                        <br><br> <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="DropDown Android need Java code , need more tiome, sorry" />
+                                                        </fieldset>
+                                                        <br><br>
+                                                </LinearLayoiut>
+                    </LinearLayout>

@@ -113,25 +113,33 @@ class TransfoModelToText {
 		}
 		else
 		{
-			tmp = '''<input type="checkbox" name="«IF chk.id != null»«chk.id»«ELSE»«chk.question»«ENDIF»" value="1" />«chk.question»'''
+			tmp = '''<input type="checkbox" name="«IF chk.id != null»«chk.id»«ELSE»«chk.question»«ENDIF»" value="1" />«chk.question»<br>'''
 		}
 		return tmp + "<br>"
 	}
 	
 	def rendererRadio(Radio rd)
 	{
-		var tmp = '''
-			<label «IF rd.id != null» id="«rd.id»«ENDIF»">
-				«rd.question»
-			</label>
-		'''
-		val itRd = rd.options.iterator
-		var id = 0
-		while(itRd.hasNext())
+		var tmp = ''
+		if(rd.options.length > 0)
 		{
-			val opt = itRd.next()
-			tmp = tmp + '''<input type="radio" name="«rd.id»" value="«id»" «IF id == 0»checked «ENDIF»/>«opt.value» '''
-			id = id + 1
+			tmp = '''
+				<label «IF rd.id != null» id="«rd.id»«ENDIF»">
+					«rd.question»
+				</label>
+			'''
+			val itRd = rd.options.iterator
+			var id = 0
+			while(itRd.hasNext())
+			{
+				val opt = itRd.next()
+				tmp = tmp + '''<input type="radio" name="«rd.id»" value="«id»" «IF id == 0»checked «ENDIF»/>«opt.value» '''
+				id = id + 1
+			}	
+		}
+		else
+		{
+			tmp = '''<input type="radio" name="«IF rd.id != null»«rd.id»«ELSE»«rd.question»«ENDIF»" />«rd.question»'''
 		}
 		return tmp + "<br><br>"
 	}
@@ -143,6 +151,7 @@ class TransfoModelToText {
 				«dd.question»
 			</label>
 			<select name="«IF dd.id != null»«dd.id»«ELSE»«dd.question»«ENDIF»">
+				<option value="">Sélectionner dans la liste</option>
 		'''
 		val itRd = dd.options.iterator
 		var id = 0

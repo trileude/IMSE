@@ -27,7 +27,7 @@ import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 @SuppressWarnings("all")
-public class TransfoModelToText {
+public class TransfoModelToTextAndroid {
   public MetaLayout loadXMI(final String fileName) {
     ResourceSetImpl _resourceSetImpl = new ResourceSetImpl();
     ResourceSet resourceSet = _resourceSetImpl;
@@ -44,29 +44,41 @@ public class TransfoModelToText {
     {
       MetaLayout metaLay = this.loadXMI(fileNameXMI);
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("<html>");
+      _builder.append("                   ");
+      _builder.append("<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"");
       _builder.newLine();
-      _builder.append("<head>");
+      _builder.append("xmlns:tools=\"http://schemas.android.com/tools\"");
       _builder.newLine();
-      _builder.append("\t");
-      _builder.append("<meta charset=\"UTF-8\">");
+      _builder.append("android:layout_width=\"match_parent\"");
       _builder.newLine();
-      _builder.append("\t");
-      _builder.append("<title>Sondage généré</title>");
+      _builder.append("android:layout_height=\"match_parent\"");
       _builder.newLine();
-      _builder.append("\t");
-      _builder.append("<link rel=\'stylesheet\' href=\'style.css\' type=\'text/css\' media=\'all\' />");
+      _builder.append("android:layout_centerVertical=\"true\"");
       _builder.newLine();
-      _builder.append("</head>");
+      _builder.append("android:orientation=\"vertical\"");
       _builder.newLine();
-      _builder.append("<body>");
+      _builder.append(" ");
+      _builder.append(">");
       _builder.newLine();
+      _builder.newLine();
+      _builder.append("<TextView");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("android:layout_width=\"wrap_content\"");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("android:layout_height=\"wrap_content\"");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("android:text=\"Sondage(s) généré(s)\" />");
+      _builder.newLine();
+      _builder.newLine();
+      _builder.append("                    ");
       String _parcoursMetaLayout = this.parcoursMetaLayout(metaLay);
-      _builder.append(_parcoursMetaLayout, "");
+      _builder.append(_parcoursMetaLayout, "                    ");
       _builder.newLineIfNotEmpty();
-      _builder.append("</body>");
-      _builder.newLine();
-      _builder.append("</html>");
+      _builder.append("                    ");
+      _builder.append("</LinearLayout>");
       _builder.newLine();
       String template = _builder.toString();
       String _storeToFile = this.storeToFile(fileNameOut, template);
@@ -83,17 +95,40 @@ public class TransfoModelToText {
     while (_while) {
       {
         StringConcatenation _builder = new StringConcatenation();
-        _builder.append("<form action=\"\" method=\"GET\" name=\"\">");
+        _builder.append("                   ");
+        _builder.append("<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"");
         _builder.newLine();
-        _builder.append("<fieldset>");
+        _builder.append("xmlns:tools=\"http://schemas.android.com/tools\"");
         _builder.newLine();
-        _builder.append("\t");
+        _builder.append("android:layout_width=\"match_parent\"");
+        _builder.newLine();
+        _builder.append("android:layout_height=\"match_parent\"");
+        _builder.newLine();
+        _builder.append("android:layout_centerVertical=\"true\"");
+        _builder.newLine();
+        _builder.append("android:orientation=\"vertical\"");
+        _builder.newLine();
+        _builder.append(" ");
+        _builder.append(">");
+        _builder.newLine();
+        _builder.newLine();
+        _builder.append("<TextView");
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("android:layout_width=\"wrap_content\"");
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("android:layout_height=\"wrap_content\"");
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("android:text=\"Sondage généré\" />");
+        _builder.newLine();
+        _builder.append("                                    ");
         String _parcoursLayout = this.parcoursLayout(lay);
-        _builder.append(_parcoursLayout, "	");
+        _builder.append(_parcoursLayout, "                                    ");
         _builder.newLineIfNotEmpty();
-        _builder.append("</fieldset>");
-        _builder.newLine();
-        _builder.append("</form>");
+        _builder.append("                            ");
+        _builder.append("</LinearLayoiut>");
         _builder.newLine();
         String _plus = (tmp + _builder);
         tmp = _plus;
@@ -177,9 +212,9 @@ public class TransfoModelToText {
       }
       _builder.append("\">");
       _builder.newLineIfNotEmpty();
-      _builder.append("\t");
+      _builder.append("        ");
       String _question = chk.getQuestion();
-      _builder.append(_question, "	");
+      _builder.append(_question, "        ");
       _builder.newLineIfNotEmpty();
       _builder.append("</label>");
       _builder.newLine();
@@ -192,13 +227,23 @@ public class TransfoModelToText {
         {
           final Option opt = itChk.next();
           StringConcatenation _builder_1 = new StringConcatenation();
-          _builder_1.append("<input type=\"checkbox\" name=\"");
+          _builder_1.append("    ");
+          _builder_1.append("<CheckBox");
+          _builder_1.newLine();
+          _builder_1.append("        ");
+          _builder_1.append("android:id=\"@+id/");
           String _value = opt.getValue();
-          _builder_1.append(_value, "");
-          _builder_1.append("\" value=\"1\" />");
-          String _value_1 = opt.getValue();
-          _builder_1.append(_value_1, "");
-          _builder_1.append("<br>");
+          _builder_1.append(_value, "        ");
+          _builder_1.append("\"");
+          _builder_1.newLineIfNotEmpty();
+          _builder_1.append("        ");
+          _builder_1.append("android:layout_width=\"wrap_content\"");
+          _builder_1.newLine();
+          _builder_1.append("        ");
+          _builder_1.append("android:layout_height=\"wrap_content\"");
+          _builder_1.newLine();
+          _builder_1.append("        ");
+          _builder_1.append("android:text=\"CheckBox\" />");
           String _plus = (tmp + _builder_1);
           tmp = _plus;
         }
@@ -207,7 +252,7 @@ public class TransfoModelToText {
       }
     } else {
       StringConcatenation _builder_1 = new StringConcatenation();
-      _builder_1.append("<input type=\"checkbox\" name=\"");
+      _builder_1.append("<CheckBox android:id=\"@+id/");
       {
         String _id_2 = chk.getId();
         boolean _notEquals_1 = (!Objects.equal(_id_2, null));
@@ -219,135 +264,37 @@ public class TransfoModelToText {
           _builder_1.append(_question_1, "");
         }
       }
-      _builder_1.append("\" value=\"1\" />");
+      _builder_1.append("\" android:layout_width=\"wrap_content\" android:layout_height=\"wrap_content\" android:text=\"");
       String _question_2 = chk.getQuestion();
       _builder_1.append(_question_2, "");
-      _builder_1.append("<br>");
+      _builder_1.append("\" />");
       tmp = _builder_1.toString();
     }
     return (tmp + "<br>");
   }
   
   public String rendererRadio(final Radio rd) {
-    String tmp = "";
-    EList<Option> _options = rd.getOptions();
-    int _length = ((Object[])Conversions.unwrapArray(_options, Object.class)).length;
-    boolean _greaterThan = (_length > 0);
-    if (_greaterThan) {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("<label ");
-      {
-        String _id = rd.getId();
-        boolean _notEquals = (!Objects.equal(_id, null));
-        if (_notEquals) {
-          _builder.append(" id=\"");
-          String _id_1 = rd.getId();
-          _builder.append(_id_1, "");
-        }
-      }
-      _builder.append("\">");
-      _builder.newLineIfNotEmpty();
-      _builder.append("\t");
-      String _question = rd.getQuestion();
-      _builder.append(_question, "	");
-      _builder.newLineIfNotEmpty();
-      _builder.append("</label>");
-      _builder.newLine();
-      tmp = _builder.toString();
-      EList<Option> _options_1 = rd.getOptions();
-      final Iterator<Option> itRd = _options_1.iterator();
-      int id = 0;
-      boolean _hasNext = itRd.hasNext();
-      boolean _while = _hasNext;
-      while (_while) {
-        {
-          final Option opt = itRd.next();
-          StringConcatenation _builder_1 = new StringConcatenation();
-          _builder_1.append("<input type=\"radio\" name=\"");
-          String _id_2 = rd.getId();
-          _builder_1.append(_id_2, "");
-          _builder_1.append("\" value=\"");
-          _builder_1.append(id, "");
-          _builder_1.append("\" ");
-          {
-            boolean _equals = (id == 0);
-            if (_equals) {
-              _builder_1.append("checked ");
-            }
-          }
-          _builder_1.append("/>");
-          String _value = opt.getValue();
-          _builder_1.append(_value, "");
-          _builder_1.append(" ");
-          String _plus = (tmp + _builder_1);
-          tmp = _plus;
-          int _plus_1 = (id + 1);
-          id = _plus_1;
-        }
-        boolean _hasNext_1 = itRd.hasNext();
-        _while = _hasNext_1;
-      }
-    } else {
-      StringConcatenation _builder_1 = new StringConcatenation();
-      _builder_1.append("<input type=\"radio\" name=\"");
-      {
-        String _id_2 = rd.getId();
-        boolean _notEquals_1 = (!Objects.equal(_id_2, null));
-        if (_notEquals_1) {
-          String _id_3 = rd.getId();
-          _builder_1.append(_id_3, "");
-        } else {
-          String _question_1 = rd.getQuestion();
-          _builder_1.append(_question_1, "");
-        }
-      }
-      _builder_1.append("\" />");
-      String _question_2 = rd.getQuestion();
-      _builder_1.append(_question_2, "");
-      tmp = _builder_1.toString();
-    }
-    return (tmp + "<br><br>");
-  }
-  
-  public String rendererDropDown(final DropDown dd) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<label ");
     {
-      String _id = dd.getId();
+      String _id = rd.getId();
       boolean _notEquals = (!Objects.equal(_id, null));
       if (_notEquals) {
         _builder.append(" id=\"");
-        String _id_1 = dd.getId();
+        String _id_1 = rd.getId();
         _builder.append(_id_1, "");
       }
     }
     _builder.append("\">");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    String _question = dd.getQuestion();
-    _builder.append(_question, "	");
+    _builder.append("        ");
+    String _question = rd.getQuestion();
+    _builder.append(_question, "        ");
     _builder.newLineIfNotEmpty();
     _builder.append("</label>");
     _builder.newLine();
-    _builder.append("<select name=\"");
-    {
-      String _id_2 = dd.getId();
-      boolean _notEquals_1 = (!Objects.equal(_id_2, null));
-      if (_notEquals_1) {
-        String _id_3 = dd.getId();
-        _builder.append(_id_3, "");
-      } else {
-        String _question_1 = dd.getQuestion();
-        _builder.append(_question_1, "");
-      }
-    }
-    _builder.append("\">");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.append("<option value=\"\">Sélectionner dans la liste</option>");
-    _builder.newLine();
     String tmp = _builder.toString();
-    EList<Option> _options = dd.getOptions();
+    EList<Option> _options = rd.getOptions();
     final Iterator<Option> itRd = _options.iterator();
     int id = 0;
     boolean _hasNext = itRd.hasNext();
@@ -356,61 +303,95 @@ public class TransfoModelToText {
       {
         final Option opt = itRd.next();
         StringConcatenation _builder_1 = new StringConcatenation();
-        _builder_1.append("<option value=\"");
-        _builder_1.append(id, "");
-        _builder_1.append("\"/>");
-        String _value = opt.getValue();
-        _builder_1.append(_value, "");
-        _builder_1.append("</option>");
-        _builder_1.newLineIfNotEmpty();
-        String _plus = (tmp + _builder_1);
-        tmp = _plus;
-        int _plus_1 = (id + 1);
-        id = _plus_1;
+        _builder_1.append("<RadioButton android:id=\"@+id/");
+        {
+          String _id_2 = rd.getId();
+          boolean _notEquals_1 = (!Objects.equal(_id_2, null));
+          if (_notEquals_1) {
+            String _id_3 = rd.getId();
+            _builder_1.append(_id_3, "");
+          } else {
+            String _question_1 = rd.getQuestion();
+            _builder_1.append(_question_1, "");
+          }
+        }
+        _builder_1.append("\" android:layout_width=\"wrap_content\" android:layout_height=\"wrap_content\" android:text=\"");
+        String _question_2 = rd.getQuestion();
+        _builder_1.append(_question_2, "");
+        _builder_1.append("\" />");
+        tmp = _builder_1.toString();
+        int _plus = (id + 1);
+        id = _plus;
       }
       boolean _hasNext_1 = itRd.hasNext();
       _while = _hasNext_1;
     }
-    StringConcatenation _builder_1 = new StringConcatenation();
-    _builder_1.append("</select>");
-    String _plus = (tmp + _builder_1);
-    tmp = _plus;
     return (tmp + "<br><br>");
+  }
+  
+  public String rendererDropDown(final DropDown dd) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append(" ");
+    String tmp = _builder.toString();
+    StringConcatenation _builder_1 = new StringConcatenation();
+    _builder_1.append("<TextView android:layout_width=\"wrap_content\" android:layout_height=\"wrap_content\" android:text=\"DropDown Android need Java code , need more tiome, sorry\" />");
+    return (tmp + _builder_1);
   }
   
   public String rendererText(final Text txt) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<label ");
+    _builder.append("<TextView");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t        ");
     {
       String _id = txt.getId();
       boolean _notEquals = (!Objects.equal(_id, null));
       if (_notEquals) {
-        _builder.append(" id=\"");
+        _builder.append("android:id=\"@+id/");
         String _id_1 = txt.getId();
-        _builder.append(_id_1, "");
+        _builder.append(_id_1, "					        ");
       }
     }
-    _builder.append("\">");
+    _builder.append("\"");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    String _question = txt.getQuestion();
-    _builder.append(_question, "	");
-    _builder.newLineIfNotEmpty();
-    _builder.append("</label>");
+    _builder.append("\t\t\t\t\t        ");
+    _builder.append("android:layout_width=\"wrap_content\"");
     _builder.newLine();
-    _builder.append("<input type=\"text\" name=\"");
+    _builder.append("\t\t\t\t\t        ");
+    _builder.append("android:layout_height=\"wrap_content\"");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t\t\t");
+    _builder.append("android:text=\"");
+    String _question = txt.getQuestion();
+    _builder.append(_question, "							");
+    _builder.append("\"/>");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t\t\t\t\t\t\t\t\t    ");
+    _builder.append("<EditText");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t       ");
     {
       String _id_2 = txt.getId();
       boolean _notEquals_1 = (!Objects.equal(_id_2, null));
       if (_notEquals_1) {
+        _builder.append(" android:id=\"@+id/");
         String _id_3 = txt.getId();
-        _builder.append(_id_3, "");
-      } else {
-        String _question_1 = txt.getQuestion();
-        _builder.append(_question_1, "");
+        _builder.append(_id_3, "					       ");
       }
     }
-    _builder.append("\" />");
+    _builder.append("\"");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t\t\t        ");
+    _builder.append("android:layout_width=\"wrap_content\"");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t        ");
+    _builder.append("android:layout_height=\"wrap_content\"");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t\t\t");
+    _builder.append("android:text=\"");
+    String _question_1 = txt.getQuestion();
+    _builder.append(_question_1, "							");
+    _builder.append("\"/>");
     _builder.newLineIfNotEmpty();
     String tmp = _builder.toString();
     return (tmp + "<br><br>");
@@ -418,37 +399,58 @@ public class TransfoModelToText {
   
   public String rendererTextArea(final TextArea txt) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<label ");
+    _builder.append("<TextView");
+    _builder.newLine();
+    _builder.append("        ");
     {
       String _id = txt.getId();
       boolean _notEquals = (!Objects.equal(_id, null));
       if (_notEquals) {
-        _builder.append(" id=\"");
+        _builder.append("android:id=\"@+id/");
         String _id_1 = txt.getId();
-        _builder.append(_id_1, "");
+        _builder.append(_id_1, "        ");
       }
     }
-    _builder.append("\">");
+    _builder.append("\"");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    String _question = txt.getQuestion();
-    _builder.append(_question, "	");
-    _builder.newLineIfNotEmpty();
-    _builder.append("</label>");
+    _builder.append("        ");
+    _builder.append("android:layout_width=\"wrap_content\"");
     _builder.newLine();
-    _builder.append("<textarea rows=\"4\" cols=\"50\" name=\"");
+    _builder.append("        ");
+    _builder.append("android:layout_height=\"wrap_content\"");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("android:text=\"");
+    String _question = txt.getQuestion();
+    _builder.append(_question, "		");
+    _builder.append("\"/>");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t\t\t\t    ");
+    _builder.append("<EditText");
+    _builder.newLine();
+    _builder.append("       ");
     {
       String _id_2 = txt.getId();
       boolean _notEquals_1 = (!Objects.equal(_id_2, null));
       if (_notEquals_1) {
+        _builder.append(" android:id=\"@+id/");
         String _id_3 = txt.getId();
-        _builder.append(_id_3, "");
-      } else {
-        String _question_1 = txt.getQuestion();
-        _builder.append(_question_1, "");
+        _builder.append(_id_3, "       ");
       }
     }
-    _builder.append("\"></textarea>");
+    _builder.append("\"");
+    _builder.newLineIfNotEmpty();
+    _builder.append("        ");
+    _builder.append("android:layout_width=\"fill_parent\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:layout_height=\"fill_parent\"");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("android:text=\"");
+    String _question_1 = txt.getQuestion();
+    _builder.append(_question_1, "		");
+    _builder.append("\"/>");
     _builder.newLineIfNotEmpty();
     String tmp = _builder.toString();
     return (tmp + "<br><br>");
@@ -474,16 +476,16 @@ public class TransfoModelToText {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<fieldset>");
     _builder.newLine();
-    _builder.append("\t");
+    _builder.append("        ");
     _builder.append("<legend>");
     String _question = eq.getQuestion();
-    _builder.append(_question, "	");
+    _builder.append(_question, "        ");
     _builder.append("</legend>");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t\t");
+    _builder.append("                ");
     EList<ElementUI> _listeSousQuestion = eq.getListeSousQuestion();
     String _parcoursSousQuestions = this.parcoursSousQuestions(_listeSousQuestion);
-    _builder.append(_parcoursSousQuestions, "		");
+    _builder.append(_parcoursSousQuestions, "                ");
     _builder.newLineIfNotEmpty();
     _builder.append("</fieldset>");
     _builder.newLine();
